@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 
 export default class List extends Component {
     displayItems() {
-        const { items, onCheckItem, onDeleteItem } = this.props
+        const { items, onCheckItem, onDeleteItem } = this.props;
 
         return (
             items.map((item, index) => {

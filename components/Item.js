@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-nati
 import { Icon } from 'react-native-elements';
 
 
-import C from './Checkbox'
+import Checkbox from './Checkbox'
 
 const styles = StyleSheet.create({
     itemView: {
