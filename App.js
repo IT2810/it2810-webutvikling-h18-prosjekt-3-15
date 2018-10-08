@@ -10,7 +10,12 @@ export default class App extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <TimerWrapper/>
+                <CountDown
+                    until={10}
+                    onFinish={() => {
+                        console.log("Timer finished");}}
+                    size={20}
+                    timeToShow={['M', 'S']}/>
                 <RoundButton
                     text="Play"
                     onPress={() => {
