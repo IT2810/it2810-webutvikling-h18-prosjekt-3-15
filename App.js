@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import CustomButton from './Components/customButton.js';
 import RoundButton from './Components/roundButton.js';
 import TimerWrapper from './Components/TimerWrapper.js';
-
+import CountDown from 'react-native-countdown-component';
 
 
 export default class App extends React.Component {
@@ -14,25 +14,16 @@ export default class App extends React.Component {
                     until={10}
                     onFinish={() => {
                         console.log("Timer finished");}}
-                    size={20}
+                    onPress={() => {
+                        alert("Hi there!!!");
+                    }}
+                    size={40}
                     timeToShow={['M', 'S']}/>
                 <RoundButton
                     text="Play"
                     onPress={() => {
                         alert("Hi there!!!");
                     }}
-                />
-                <CustomButton class='playButton'
-                              text="Click Me"
-                              onPress={() => {
-                                  alert("Hi there!!!");
-                              }}
-                />
-                <CustomButton class='playButton'
-                              text="Click Me"
-                              onPress={() => {
-                                  alert("Hi there!!!");
-                              }}
                 />
             </View>
         );
