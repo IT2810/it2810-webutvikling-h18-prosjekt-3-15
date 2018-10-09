@@ -4,8 +4,29 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity,
+    AsyncStorage,
 } from 'react-native';
 import { CheckBox } from 'react-native-elements';
+
+// alle disse kommentarene er hvordan jeg tror det kan løses ish, men vet ikke hvor jeg skal starte
+// eller hvordan jeg skal implementere det (:
+
+//const checkedSave = { 'checked' : 'false'};
+
+//const checkToBeSaved = { 'checked' : this.state.checked};
+
+//const existingCheck = await AsyncStorage.getItem('checkedbox');
+
+//let newChecked = JSON.parse(existingCheck);
+//if( !newChecked ){
+//    newChecked = []
+//}
+
+//newChecked.push( checkToBeSaved )
+
+//await AsyncStorage.setItem('checkedbox', JSON.stringify(newChecked) )
+//    .then( () => { console.log ('Successfully saved')} )
+//    .catch( () => { console.log('There was an error saving the CheckedState.')})
 
 export default class Task extends Component {
     constructor(props){
@@ -15,8 +36,30 @@ export default class Task extends Component {
         }
     }
 
+    // disse saver bare strings ?? hvordan booleans da ? lagre hvem som er checked.
+    // parse til JSON også tilbake ? how.
+    async getChecked(){
+        try{
+            let value = await AsyncStorage.getItem('checkedbox', value);
+            this.setState({checked: value})
+        } catch (error){
+            console.log("Error retrieving data " + error);
+        }
+    }
+
+    async saveChecked(value){
+        try{
+            await AsyncStorage.setItem('checkedbox', JSON.stringify(this.state.checked));
+            console.log("save value : " + value);
+        }catch(error){
+            console.log("Error saving data " + error);
+        }
+    }
+
     checkboxClicked(){
-        this.setState({checked: !this.state.checked})
+        this.setState({checked: !this.state.checked});
+        this.saveChecked(this.state.checked);
+        console.log(this.state.checked);
     }
 
     render() {
@@ -26,7 +69,7 @@ export default class Task extends Component {
                 <Text style={styles.taskText}>{this.props.task}</Text>
                 <View style={styles.checkbox}>
                 <CheckBox style={styles.checkbox} checked={this.state.checked}
-                          onPress={() => this.checkboxClicked()}/>
+                          onPress={() => this.checkboxClicked()} />
                 </View>
                 <TouchableOpacity onPress={this.props.deleteMethod} style={styles.taskDelete}>
                     <Text style={styles.taskDeleteText}>Delete</Text>
