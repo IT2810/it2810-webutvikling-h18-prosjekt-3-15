@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import Icon from 'react-native-elements'
 
-class CustomButton extends Component {
+class RoundButton extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {text:"",
+            /*some kind of state for keeping track of if its 'on' or not*/
+        }
+    }
     render() {
         const { text, onPress} = this.props;
         return (
@@ -15,10 +23,10 @@ class CustomButton extends Component {
     }
 }
 
-/*Declare what types of props CustomButton will have.
-* Have set these as required because every CustomButton should have these.
+/*Declare what types of props RoundButton will have.
+* Have set these as required because every RoundButton should have these.
 * Can be changed later if needed.*/
-CustomButton.propTypes = {
+RoundButton.propTypes = {
     text: PropTypes.string.isRequired,
     onPress: PropTypes.func.isRequired
 };
@@ -30,17 +38,20 @@ const styles = StyleSheet.create({
         fontSize:20,
         color: '#ffffff',
         textAlign: 'center',
+
+
     },
 
     buttonStyle: {
-        padding:15,
+        padding: 48,
         backgroundColor: '#202646',
-        borderRadius:5,
+        borderRadius:100,
         marginTop: 10,
-
+        marginLeft: 109,
+        marginRight: 109
 
     }
 });
 
 /*exporting the component so it can be fetched in App.js and so on*/
-export default CustomButton;
+export default RoundButton;
