@@ -1,8 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import CustomButton from './Components/customButton.js';
 import RoundButton from './Components/roundButton.js';
-import TimerWrapper from './Components/TimerWrapper.js';
 import CountDown from './Components/CountDown.js';
 
 
