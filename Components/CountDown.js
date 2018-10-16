@@ -22,7 +22,7 @@ import {
 import _ from 'lodash';
 import {sprintf} from 'sprintf-js';
 
-const DEFAULT_BG_COLOR = '#FAB913';
+const DEFAULT_BG_COLOR = '#4286f4';
 const DEFAULT_TIME_TXT_COLOR = '#000';
 const DEFAULT_DIGIT_TXT_COLOR = '#000';
 const DEFAULT_TIME_TO_SHOW = ['D', 'H', 'M', 'S'];
@@ -181,7 +181,7 @@ CountDown.defaultProps = {
 	labelM: "Minutes",
 	labelS: "Seconds",
 	until: 0,
-	size: 15,
+	size: 30,
 	paused: false,
 };
 

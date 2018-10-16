@@ -17,7 +17,7 @@ export default class App extends React.Component {
         return (
             <View style={styles.container}>
 				{/*Countdown screen- Move to list-view when ready*/}
-                <CountDown
+                <CountDown style={styles.countdown}
                     until={2700}
                     timeToShow={['M', 'S']}
 					paused={this.state.timerPaused}/>
@@ -43,4 +43,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexDirection: 'column',
     },
+    countdown:{
+        marginTop: 30,
+    }
 });
