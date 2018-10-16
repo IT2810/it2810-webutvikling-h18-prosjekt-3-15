@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button, TextInput, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import Subject from './Subject';
 class Mainpage extends React.Component {
     constructor(props) {
@@ -21,23 +21,28 @@ class Mainpage extends React.Component {
                     <Text>- Subjects -</Text>
                 </View>
                 <ScrollView>
-                    {(Object.keys(subDict)).map((key) => {
-                        return <Subject key={key} subject={subDict[key]["subjectText"] } url={[key]["url"]}
-                                        deleteMethod={() => this.deleteSubject(key)}/>
+                    {(Object.keys(subDict)).map((key)=> {
+                        return (<Subject key={key} subject={subDict[key]["subjectText"]} url={[key]["url"]}
+                                        deleteMethod={() => this.deleteSubject(key)}/>)
+
+
                     })}
+
                 </ScrollView>
                 <View>
                     <TextInput
                         style={styles.textInput}
                         placeholder={"Add subjects here"}
-                        onChangeText={(subjectText) => this.setState({subjectText})}
+                        onChangeText={(subjectText) => {
+                            this.setState({subjectText});
+                        }}
                         value={this.state.subjectText}
                         placeholderTextColor='white'
                         underlineColorAndroid='transparent'>
                     </TextInput>
                 </View>
                 <Text style={styles.backgroundInput}/>
-                <TouchableOpacity onPress={this.addSubject.bind(this)} style={styles.addButton}>
+                <TouchableOpacity onPress={()=> this.addSubject()} style={styles.addButton}>
                     <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
             </View>
@@ -52,12 +57,14 @@ class Mainpage extends React.Component {
                 'subjectText': this.state.subjectText,
                 'url': "/" + keyInt + "/" + this.state.subjectText,
             };
-            this.setState = ({
+            this.setState({
                 ...this.state,
                 keyCount: keyInt,
                 subjects: newDict,
                 subjectText: ''
             });
+
+
         }
     }
 

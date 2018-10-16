@@ -5,8 +5,10 @@ import {
     StyleSheet,
     TouchableOpacity,
     AsyncStorage,
+    Button,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {} from 'react-navigation';
 
 
 export default class Subject extends React.Component{
@@ -20,8 +22,8 @@ export default class Subject extends React.Component{
 
     render() {
         return (
-            <View key={this.props.keyCount} style={styles.subject}>
-                <Text style={styles.subjectText}>{this.props.subjectText}</Text>
+            <View key={this.props.keyval} style={styles.subject}>
+                <Button style={styles.subjectText} onPress={() => this.props.navigation.navigate('TodoList')} title={this.props.subject} >Hei</Button>
                 <Icon name='arrow-right' size={15} color='blue'/>
                 <TouchableOpacity onPress={this.props.deleteMethod} style={styles.subjectDelete}>
                     <Text style={styles.subjectDeleteText}>Delete</Text>

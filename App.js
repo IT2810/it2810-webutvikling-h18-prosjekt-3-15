@@ -1,22 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Mainpage from './components/Mainpage';
+import Mainpage from "./components/Mainpage";
 
-export default class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state={
-            title: ["placeholder"]
-        }
+
+export default class App extends React.Component{
+    render() {
+        return (
+            <Mainpage/>
+        );
     }
-
-  render() {
-    return (
-      <View>
-          <Mainpage/>
-      </View>
-    );
-  }
 }
 
 const styles = StyleSheet.create({
@@ -25,5 +17,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
