@@ -3,26 +3,33 @@ import { View, StyleSheet } from 'react-native';
 import CustomButton from './Components/customButton.js';
 import RoundButton from './Components/roundButton.js';
 import TimerWrapper from './Components/TimerWrapper.js';
-import CountDown from 'react-native-countdown-component';
+import CountDown from './Components/CountDown.js';
 
 
 export default class App extends React.Component {
+	constructor(props){
+		super(props);
+		//Just a demo! Move timerPaused to wherever the playbutton and list-screen is
+		this.state = {
+			timerPaused: true
+		}
+	}
+
     render() {
         return (
             <View style={styles.container}>
+				{/*Countdown screen- Move to list-view when ready*/}
                 <CountDown
-                    until={10}
-                    onFinish={() => {
-                        console.log("Timer finished");}}
-                    onPress={() => {
-                        alert("Hi there!!!");
-                    }}
-                    size={40}
-                    timeToShow={['M', 'S']}/>
+                    until={2700}
+                    timeToShow={['M', 'S']}
+					paused={this.state.timerPaused}/>
                 <RoundButton
-                    text="Play"
+                    text= "play"
                     onPress={() => {
-                        alert("Hi there!!!");
+                        this.setState({
+							timerPaused: !this.state.timerPaused
+						});
+                        debugger;
                     }}
                 />
             </View>
