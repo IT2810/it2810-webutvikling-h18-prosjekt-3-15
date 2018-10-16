@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet} from 'react-native';
-import CustomButton from './Components/customButton.js';
+import RoundButton from './Components/roundButton.js';
 import Todo from "./Components/Todo";
 import CountDown from './Components/CountDown.js';
 
@@ -30,6 +30,7 @@ export default class App extends React.Component {
                         debugger;
                     }}
                 />
+                <Todo/>
             </View>
         );
     }
