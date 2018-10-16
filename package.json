@@ -12,9 +12,13 @@
     "@expo/vector-icons": "^8.0.0",
     "expo": "^30.0.1",
     "native-base": "^2.8.1",
+    "moment": "^2.22.2",
     "react": "16.3.1",
+    "react-countdown-clock": "^2.4.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
-    "react-native-elements": "^0.19.1"
+    "react-native-elements": "^0.19.1",
+    "sprintf": "^0.1.5",
+    "sprintf-js": "^1.1.1"
   },
   "devDependencies": {
     "enzyme": "^3.6.0",
