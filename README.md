@@ -12,6 +12,13 @@ Løsningen skal være en prototyp innenfor det som er beskrevet over. Det er gru
 - Du skal kunne legge til nye elementer som oppgaver, todos, avtaler, motivasjoner og/eller målinger etc. Velg selv hva dere vil jobbe med.
 - Tilstand skal lagres (vha AsyncStorage) slik at data tas vare på selv om appen avsluttes og startes. 
 
+### Vår App
+Appen vår tar utgangspunkt i Pomodoro studieteknikken. Denne går ut på at du arbeider konsentrert med kun en oppgave i en fastsatt tid før du tar en pause. I vår app valgte vi å ha intervallene 45 min jobbing og 15 min pause. Appen skal hjelpe brukeren med å holde orden på tiden samt oppgavene som skal utføres.
+
+Det første du møter når du åpner appen er 'hovedsiden'. Her kan du legge til og fjerne emner. Et eksempel er at du legger til 'IT2810 - Webutvikling" som et emne. Når du trykker på emnet vil du bli ført til en ToDo side. Her kan du legge til og fjerne oppgaver/øvinger samt starte klokken for å time arbeidsperioden.
+
+Som motivasjonselement har vi valgt å prøve å motivere brukeren til å bevege seg og kanskje få litt frisk luft ila. pausen. Dette er til for at brukeren skal få mest mulig ut av den neste arbeidsperioden. I pausen vil skrittelleren holde orden på antall skritt og i slutten av pause perioden vil brukeren få informasjon om hvor mange skritt som ble tatt.
+
 - Appen skal vise ett eksempel på noe som er utover basic React Native UI-problematikk (som bruk av gps, skritt-teller, direkte kommunikasjon med andre enheter - eller hva som helst annet relevant dere ønsker å utforske og som er innenfor begrensingene å få til).
 ### Skritteller [tutorial form]
 Vi valgte å utforske Skritteller funksjonalitet i dette prosjektet. Denne skulle logge antall skritt en bruker tok ila sine 15 min pauser mellom lesing for å motivere brukeren til å begeve seg og så mest mulig ut av pausen.
