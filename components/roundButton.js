@@ -38,18 +38,17 @@ const styles = StyleSheet.create({
         fontSize:20,
         color: '#ffffff',
         textAlign: 'center',
-
-
     },
 
     buttonStyle: {
-        padding: 48,
-        backgroundColor: '#202646',
+        padding: 15,
+        backgroundColor: '#2fc47c',
         borderRadius:100,
+        borderColor: '#000',
         marginTop: 10,
-        marginLeft: 109,
-        marginRight: 109
-
+        marginBottom: 10,
+        marginLeft: 145,
+        marginRight: 145
     }
 });
 

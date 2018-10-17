@@ -396,7 +396,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-#expo
+#expo-files:
 .expo/packager-info.json.*
 
 # End of https://www.gitignore.io/api/node,linux,windows,webstorm,reactnative
