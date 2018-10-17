@@ -87,13 +87,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#4286f4',
         alignItems: 'center',
         justifyContent:'center',
-        borderBottomWidth: 10,
-        borderBottomColor: '#ddd'
+        opacity: 0.85
     },
     headerText: {
         color: 'white',
-        fontSize: 18,
-        padding: 26
+        fontSize: 22,
+        fontWeight: 'bold',
+        padding: 10
     },
     scrollContainer: {
         flex: 1,
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     },
     footer: {
         position: 'absolute',
-        top: 85,
+        top: 47,
         left: 0,
         right: 0,
         zIndex: 10
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 11,
         right: 5,
-        top: 90,
+        top: 50,
         backgroundColor: '#2fc47c',
         width: 60,
         height: 60,
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 10,
         right: 0,
-        top: 85,
+        top: 47,
         backgroundColor: '#252525',
         width: 80,
         height: 68,
