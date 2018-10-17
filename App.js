@@ -1,23 +1,13 @@
 import React from 'react';
-import { View, StyleSheet} from 'react-native';
-import Todo from "./Components/Todo";
-import CountdownComponent from "./Components/CountdownComponent";
+import { StyleSheet, Text, View } from 'react-native';
+import Mainpage from "./components/Mainpage";
 
-export default class App extends React.Component {
-	constructor(props){
-		super(props);
-	}
 
+export default class App extends React.Component{
+	//TODO: Add logic to change between views Mainpage and Todo
     render() {
         return (
-            <View style={styles.container}>
-				{/*Countdown screen- Move to list-view when ready*/}
-                <CountdownComponent
-					style={styles.countdown}
-                    until={2700}
-                    timeToShow={['M', 'S']}/>
-                <Todo/>
-            </View>
+            <Mainpage/>
         );
     }
 }
