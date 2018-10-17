@@ -1,27 +1,30 @@
 {
-  "name": "empty-project-template",
-  "main": "node_modules/expo/AppEntry.js",
-  "private": true,
-  "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "eject": "expo eject"
-  },
-  "dependencies": {
-    "@expo/vector-icons": "^8.0.0",
-    "expo": "^30.0.1",
-    "native-base": "^2.8.1",
-    "moment": "^2.22.2",
-    "react": "16.3.1",
-    "react-countdown-clock": "^2.4.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
-    "react-native-elements": "^0.19.1",
-    "sprintf": "^0.1.5",
-    "sprintf-js": "^1.1.1"
-  },
-  "devDependencies": {
-    "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0"
-  }
+	"name": "empty-project-template",
+	"main": "node_modules/expo/AppEntry.js",
+	"private": true,
+	"scripts": {
+		"start": "expo start",
+		"android": "expo start --android",
+		"ios": "expo start --ios",
+		"eject": "expo eject"
+	},
+	"dependencies": {
+		"@expo/vector-icons": "^8.0.0",
+		"expo": "^30.0.1",
+		"native-base": "^2.8.1",
+		"moment": "^2.22.2",
+		"react": "16.3.1",
+		"react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+		"react-native-nested-listview": "^0.6.0",
+		"react-native-vector-icons": "^6.0.2",
+		"react-navigation": "^2.18.0",
+		"react-countdown-clock": "^2.4.0",
+		"react-native-elements": "^0.19.1",
+		"sprintf": "^0.1.5",
+		"sprintf-js": "^1.1.1"
+	},
+	"devDependencies": {
+		"enzyme": "^3.6.0",
+		"enzyme-adapter-react-16": "^1.5.0"
+	}
 }
