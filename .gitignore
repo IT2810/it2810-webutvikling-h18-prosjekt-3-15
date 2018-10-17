@@ -337,7 +337,6 @@ cmake-build-*/
 *.iws
 
 # IntelliJ
-.editorconfig
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -396,7 +395,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-#expo-files:
-.expo/packager-info.json.*
 
 # End of https://www.gitignore.io/api/node,linux,windows,webstorm,reactnative
