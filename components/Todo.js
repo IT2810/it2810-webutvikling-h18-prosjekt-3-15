@@ -53,18 +53,10 @@ export default class Todo extends Component {
         let taskDict = this.state.taskDict;
         const nav = this.props.navigation;
         return (
-            <View style={styles.container}>
+            <View>
                 <View style={styles.header}>
                     <Text style={styles.headerText}>- TASK -</Text>
                 </View>
-                <ScrollView style={styles.scrollContainer}>
-                    {(Object.keys(taskDict)).map((key) => {
-                        return <Task key={key} taskKey={key} task={taskDict[key]["taskText"]} date={taskDict[key]["date"]} navigation={nav}
-                                     checked={taskDict[key]['checked']}
-                                     deleteMethod = {() => this.deleteTask(key)}
-                                     callback={() => this.checkedBox(key)}/>} )
-                    }
-                </ScrollView>
                 <View style={styles.footer}>
                     <TextInput
                         style={styles.textInput}
@@ -80,6 +72,14 @@ export default class Todo extends Component {
                 <TouchableOpacity onPress={ this.addTask.bind(this) } style={styles.addButton}>
                     <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
+                <ScrollView contentContainerStyle={styles.scrollContainer}>
+                    {(Object.keys(taskDict)).map((key) => {
+                        return <Task key={key} taskKey={key} task={taskDict[key]["taskText"]} date={taskDict[key]["date"]} navigation={nav}
+                                     checked={taskDict[key]['checked']}
+                                     deleteMethod = {() => this.deleteTask(key)}
+                                     callback={() => this.checkedBox(key)}/>} )
+                    }
+                </ScrollView>
                 <Button title="Go back" onPress={()=> nav.goBack()}/>
             </View>
         );
