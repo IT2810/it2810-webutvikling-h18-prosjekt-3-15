@@ -59,6 +59,7 @@ export default class Todo extends Component {
         const nav = this.props.navigation;
         return (
             <View>
+                <CountdownComponent until={2700}/>
                 <View style={styles.footer}>
                     <TextInput
                         style={styles.textInput}
@@ -131,12 +132,12 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     scrollViewContainer:{
-        height: 550,
+        height: 400,
         marginTop:70,
     },
     footer: {
         position: 'absolute',
-        top: 0,
+        top: 162,
         left: 0,
         right: 0,
         zIndex: 10
@@ -152,7 +153,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 11,
         right: 5,
-        top: 3,
+        top: 165,
         backgroundColor: '#2fc47c',
         width: 60,
         height: 60,
@@ -165,7 +166,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 10,
         right: 0,
-        top: 0,
+        top: 162,
         backgroundColor: '#252525',
         width: 80,
         height: 68,
