@@ -11,7 +11,9 @@ export default class App extends React.Component{
 	//TODO: Add logic to change between views Mainpage and Todo
     render() {
         return (
-            <StepCounter/>
+            <View style={styles.container}>
+                <StepCounter/>
+            </View>
         );
     }
 }
