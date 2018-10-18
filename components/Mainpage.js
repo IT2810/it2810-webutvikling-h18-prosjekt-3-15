@@ -37,17 +37,19 @@ class Mainpage extends React.Component {
                 <Text style={styles.backgroundInput}/>
                 <TouchableOpacity onPress={()=> this.addSubject()} style={styles.addButton}>
                     <Text style={styles.addButtonText}>+</Text>
-                </TouchableOpacity> 
-                <ScrollView contentContainerStyle={styles.scrollContainer}>
-                        {(Object.keys(subDict)).map((key)=> {
-                            return (<Subject
-                                key={key}
-                                subject={subDict[key]["subjectText"]}
-                                url={[key]["url"] }
-                                navigation={nav}
-                                deleteMethod={() => this.deleteSubject(key)}/>)
-                        })}
-                </ScrollView>
+                </TouchableOpacity>
+                <View style={styles.scrollViewContainer}>
+                    <ScrollView contentContainerStyle={styles.scrollContainer}>
+                            {(Object.keys(subDict)).map((key)=> {
+                                return (<Subject
+                                    key={key}
+                                    subject={subDict[key]["subjectText"]}
+                                    url={[key]["url"] }
+                                    navigation={nav}
+                                    deleteMethod={() => this.deleteSubject(key)}/>)
+                            })}
+                    </ScrollView>
+                </View>
             </View>
 
         );
@@ -112,10 +114,8 @@ class Mainpage extends React.Component {
         fontSize: 18,
         padding: 26
     },
-    scrollContainer: {
-        paddingVertical: 10,
-        justifyContent: 'space-between',
-
+    scrollViewContainer:{
+        height: 550,
     },
     footer: {
         position: 'absolute',
@@ -160,7 +160,6 @@ class Mainpage extends React.Component {
         color: '#fff',
         fontSize: 24
     }
-
 });
 
 export default Mainpage;

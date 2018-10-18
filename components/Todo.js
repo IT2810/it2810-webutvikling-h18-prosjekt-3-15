@@ -54,9 +54,6 @@ export default class Todo extends Component {
         const nav = this.props.navigation;
         return (
             <View>
-                <View style={styles.header}>
-                    <Text style={styles.headerText}>- TASK -</Text>
-                </View>
                 <View style={styles.footer}>
                     <TextInput
                         style={styles.textInput}
@@ -72,15 +69,16 @@ export default class Todo extends Component {
                 <TouchableOpacity onPress={ this.addTask.bind(this) } style={styles.addButton}>
                     <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
-                <ScrollView contentContainerStyle={styles.scrollContainer}>
-                    {(Object.keys(taskDict)).map((key) => {
-                        return <Task key={key} taskKey={key} task={taskDict[key]["taskText"]} date={taskDict[key]["date"]} navigation={nav}
-                                     checked={taskDict[key]['checked']}
-                                     deleteMethod = {() => this.deleteTask(key)}
-                                     callback={() => this.checkedBox(key)}/>} )
-                    }
-                </ScrollView>
-                <Button title="Go back" onPress={()=> nav.goBack()}/>
+                <View style={styles.scrollViewContainer}>
+                    <ScrollView>
+                        {(Object.keys(taskDict)).map((key) => {
+                            return <Task key={key} taskKey={key} task={taskDict[key]["taskText"]} date={taskDict[key]["date"]} navigation={nav}
+                                         checked={taskDict[key]['checked']}
+                                         deleteMethod = {() => this.deleteTask(key)}
+                                         callback={() => this.checkedBox(key)}/>} )
+                        }
+                    </ScrollView>
+                </View>
             </View>
         );
     }
@@ -127,25 +125,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
-    header: {
-        backgroundColor: '#4286f4',
-        alignItems: 'center',
-        justifyContent:'center',
-        opacity: 0.85
-    },
-    headerText: {
-        color: 'white',
-        fontSize: 22,
-        fontWeight: 'bold',
-        padding: 10
-    },
-    scrollContainer: {
-        flex: 1,
-        marginTop:63,
+    scrollViewContainer:{
+        height: 550,
+        marginTop:70,
     },
     footer: {
         position: 'absolute',
-        top: 47,
+        top: 0,
         left: 0,
         right: 0,
         zIndex: 10
@@ -161,7 +147,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 11,
         right: 5,
-        top: 50,
+        top: 3,
         backgroundColor: '#2fc47c',
         width: 60,
         height: 60,
@@ -174,7 +160,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 10,
         right: 0,
-        top: 47,
+        top: 0,
         backgroundColor: '#252525',
         width: 80,
         height: 68,
