@@ -83,20 +83,6 @@ class Mainpage extends React.Component {
         })
     }
 }
-    const rootStack = createStackNavigator(
-        {
-
-        Home: {
-            screen: Mainpage,
-        },
-        Subjects:{
-            screen: Todo,
-        },
-        },
-        {
-            initialRoute: 'Home',
-        }
-    );
     const styles = StyleSheet.create({
     container: {
         flex: 1,
