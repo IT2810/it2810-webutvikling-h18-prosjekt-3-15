@@ -5,25 +5,25 @@ import {
     StyleSheet,
     TouchableOpacity,
     AsyncStorage,
+    Button,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import {} from 'react-navigation';
+import {StackNavigator} from 'react-navigation';
 
 
 export default class Subject extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            url: this.props.url,
-
+            url: this.props.url
         }
     }
 
     render() {
+        const nav = this.props.navigation;
         return (
             <View key={this.props.keyval} style={styles.subject}>
                 <TouchableOpacity style={styles.subjectContainer}>
-                    <Text style={styles.subjectText}  >{this.props.subject}</Text>
+                    <Button title={this.props.subject} onPress={()=> nav.navigate('Subjects')}/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this.props.deleteMethod} style={styles.subjectDelete}>
                     <Text style={styles.subjectDeleteText}>Delete</Text>

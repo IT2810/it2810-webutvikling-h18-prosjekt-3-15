@@ -5,12 +5,13 @@ import {
     StyleSheet,
     TextInput,
     ScrollView,
-    TouchableOpacity
+    TouchableOpacity,
+    Button,
 } from 'react-native';
 import Task from './Task.js';
 
 export default class Todo extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             taskDict: {},
@@ -18,10 +19,12 @@ export default class Todo extends Component {
             taskText: '',
         };
         this.deleteTask = this.deleteTask.bind(this);
+
     }
 
     render() {
         let taskDict = this.state.taskDict;
+        const nav = this.props.navigation;
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
@@ -29,7 +32,7 @@ export default class Todo extends Component {
                 </View>
                 <ScrollView style={styles.scrollContainer}>
                     {(Object.keys(taskDict)).map((key) => {
-                        return <Task key={key} task={taskDict[key]["taskText"]} date={taskDict[key]["date"]}
+                        return <Task key={key} task={taskDict[key]["taskText"]} date={taskDict[key]["date"]} navigation={nav}
                         deleteMethod = {() => this.deleteTask(key)}/>} )
                     }
                 </ScrollView>
@@ -48,6 +51,7 @@ export default class Todo extends Component {
                 <TouchableOpacity onPress={ this.addTask.bind(this) } style={styles.addButton}>
                     <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
+                <Button title="Go back" onPress={()=> nav.goBack()}/>
             </View>
         );
     }

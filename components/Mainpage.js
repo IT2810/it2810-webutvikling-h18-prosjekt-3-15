@@ -1,7 +1,10 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, Button } from 'react-native';
 import Subject from './Subject';
+import {createStackNavigator} from 'react-navigation';
 import {Header} from 'react-native-elements';
+
+import Todo from './Todo';
 
 class Mainpage extends React.Component {
     constructor(props) {
@@ -9,7 +12,7 @@ class Mainpage extends React.Component {
         this.state = {
             subjectText: '',
             subjects: {},
-            keyCount: 0
+            keyCount: 0,
         }
         this.deleteSubject = this.deleteSubject.bind(this);
         this.addSubject = this.addSubject.bind(this);
@@ -17,19 +20,18 @@ class Mainpage extends React.Component {
 
     render() {
         let subDict = this.state.subjects;
+        const nav = this.props.navigation;
         return (
             <View >
-                <View>
-                    <Header centerComponent={{text: "Subjects"}}/>
-                </View>
                 <ScrollView>
                     {(Object.keys(subDict)).map((key)=> {
-                        return (<Subject key={key} subject={subDict[key]["subjectText"]} url={[key]["url"]}
-                                        deleteMethod={() => this.deleteSubject(key)}/>)
-
-
+                        return (<Subject
+                            key={key}
+                            subject={subDict[key]["subjectText"]}
+                            url={[key]["url"] }
+                            navigation={nav}
+                            deleteMethod={() => this.deleteSubject(key)}/>)
                     })}
-
                 </ScrollView>
                 <View>
                     <TextInput
@@ -48,7 +50,6 @@ class Mainpage extends React.Component {
                     <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
                 </View>
-
             </View>
 
         );
@@ -82,6 +83,20 @@ class Mainpage extends React.Component {
         })
     }
 }
+    const rootStack = createStackNavigator(
+        {
+
+        Home: {
+            screen: Mainpage,
+        },
+        Subjects:{
+            screen: Todo,
+        },
+        },
+        {
+            initialRoute: 'Home',
+        }
+    );
     const styles = StyleSheet.create({
     container: {
         flex: 1,
