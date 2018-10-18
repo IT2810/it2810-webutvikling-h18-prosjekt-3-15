@@ -15,10 +15,13 @@ import CountdownComponent from "./CountdownComponent.js";
 export default class Todo extends Component {
     constructor(props) {
         super(props);
+        //console.log(this.props.navigation)
+
         this.state = {
             taskDict: {},
             keyCount: 0,
             taskText: '',
+            urlKey: this.props.navigation.state.params.url,
         };
         this.deleteTask = this.deleteTask.bind(this);
 
@@ -26,23 +29,24 @@ export default class Todo extends Component {
 
     async getTaskDict(){
         try{
-            let value = await AsyncStorage.getItem('taskdict');
+            let value = await AsyncStorage.getItem(this.state.urlKey);
             if(value !== null){
-                console.log('value : ' + value);
+                //console.log('value : ' + value);
                 this.setState(JSON.parse(value))
+                this.setState({taskText:''})
             }
 
         } catch (error){
-            console.log("Error retrieving data " + error);
+            //console.log("Error retrieving data " + error);
         }
     }
 
     async saveTaskDict(value){
         try{
-            await AsyncStorage.setItem('taskdict', JSON.stringify(this.state));
-            console.log("save value : " + JSON.stringify(value));
+            await AsyncStorage.setItem(this.state.urlKey, JSON.stringify(this.state));
+            //console.log("save value : " + JSON.stringify(value));
         }catch(error){
-            console.log("Error saving data " + error);
+            //console.log("Error saving data " + error);
         }
     }
 
@@ -59,6 +63,7 @@ export default class Todo extends Component {
         const nav = this.props.navigation;
         return (
             <View>
+                <CountdownComponent until={2700}/>
                 <View style={styles.footer}>
                     <TextInput
                         style={styles.textInput}
@@ -131,12 +136,12 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     scrollViewContainer:{
-        height: 550,
+        height: 400,
         marginTop:70,
     },
     footer: {
         position: 'absolute',
-        top: 0,
+        top: 162,
         left: 0,
         right: 0,
         zIndex: 10
@@ -152,7 +157,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 11,
         right: 5,
-        top: 3,
+        top: 165,
         backgroundColor: '#2fc47c',
         width: 60,
         height: 60,
@@ -165,7 +170,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 10,
         right: 0,
-        top: 0,
+        top: 162,
         backgroundColor: '#252525',
         width: 80,
         height: 68,

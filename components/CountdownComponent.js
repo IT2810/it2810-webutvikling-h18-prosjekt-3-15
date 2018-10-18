@@ -7,7 +7,7 @@ export default class App extends React.Component {
 	constructor(props){
 		super(props);
 		this.state={
-			timerPaused : false
+			timerPaused : true
 		}
 	}
 
@@ -20,7 +20,7 @@ export default class App extends React.Component {
 					until={this.props.until}
 					timeToShow={['M', 'S']}
 					paused={this.state.timerPaused}/>
-				<Button title={"Pause"} onPress={() => this.pauseTimer()}/>
+				<Button title={"Play/Pause"} onPress={() => this.pauseTimer()}/>
 			</View>
 		);
 	}
@@ -34,6 +34,6 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
     countdown:{
-        marginTop: 30,
+        marginTop: 7,
     }
 });

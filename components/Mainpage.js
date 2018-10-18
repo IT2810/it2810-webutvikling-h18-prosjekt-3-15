@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, Button } from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, AsyncStorage } from 'react-native';
 import Subject from './Subject';
 import {createStackNavigator} from 'react-navigation';
 import {Header} from 'react-native-elements';
@@ -17,6 +17,31 @@ class Mainpage extends React.Component {
         };
         this.deleteSubject = this.deleteSubject.bind(this);
         this.addSubject = this.addSubject.bind(this);
+    }
+
+    async getSubjectDict(){
+        try{
+            let value = await AsyncStorage.getItem('subjects');
+            if(value !== null){
+                this.setState(JSON.parse(value));
+                //console.log('value: ' + value);
+            }
+        }
+            catch(error){
+                console.log("Error retrieving data: " +  error)
+            }
+        }
+    async saveSubjects(value){
+        try{
+            await AsyncStorage.setItem('subjects', JSON.stringify(this.state.subjects));
+            //console.log("save value : " + JSON.stringify(this.state.subjects));
+        }catch(error){
+            console.log("Error saving data " + error);
+        }
+    }
+
+    componentDidMount(){
+        this.getSubjectDict()
     }
 
     render() {
@@ -46,7 +71,7 @@ class Mainpage extends React.Component {
                                 return (<Subject
                                     key={key}
                                     subject={subDict[key]["subjectText"]}
-                                    url={[key]["url"] }
+                                    url={subDict[key]["url"] }
                                     navigation={nav}
                                     deleteMethod={() => this.deleteSubject(key)}/>)
                             })}
@@ -64,6 +89,7 @@ class Mainpage extends React.Component {
             newDict[keyInt] = {
                 'subjectText': this.state.subjectText,
                 'url': "/" + keyInt + "/" + this.state.subjectText,
+                'keyCount': keyInt,
             };
             this.setState({
                 ...this.state,
@@ -71,6 +97,7 @@ class Mainpage extends React.Component {
                 subjects: newDict,
                 subjectText: ''
             });
+            this.saveSubjects(newDict)
 
 
         }
@@ -85,20 +112,6 @@ class Mainpage extends React.Component {
         })
     }
 }
-    const rootStack = createStackNavigator(
-        {
-
-        Home: {
-            screen: Mainpage,
-        },
-        Subjects:{
-            screen: Todo,
-        },
-        },
-        {
-            initialRoute: 'Home',
-        }
-    );
 
     const styles = StyleSheet.create({
     container: {

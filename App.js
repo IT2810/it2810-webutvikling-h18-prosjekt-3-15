@@ -15,22 +15,27 @@ const RootStack = createStackNavigator(
         Home: {
             screen: HomeScreen,
             navigationOptions: {
-                title: "Subject ",
-                headerStyle:{
+                title: "Subjects",
+                headerStyle: {
                     backgroundColor: '#4286f4'
                 },
                 headerTitleStyle:{
-                        textAlign: 'center',
-                        fontWeight: 'bold',
-
-                },
-                headerTintColor: '#fff',
+                    color: '#fff',
+                    textAlign: 'center'
+                }
             }
         },
         Subjects: {
             screen: SubjectScreen,
             navigationOptions: {
-                title: "Todo-list"
+                title: "Todo-list",
+                headerStyle: {
+                    backgroundColor: '#4286f4'
+                },
+                headerTitleStyle: {
+                    textAlign: 'center',
+                    color: '#fff',
+                }
             }
         },
     },
