@@ -31,17 +31,19 @@ import { CheckBox } from 'react-native-elements';
 export default class Task extends Component {
     constructor(props){
         super(props);
-        this.state ={
-            checked: false,
-        }
     }
 
     // disse saver bare strings ?? hvordan booleans da ? lagre hvem som er checked.
     // parse til JSON også tilbake ? how.
+    /*
     async getChecked(){
         try{
             let value = await AsyncStorage.getItem('checkedbox', value);
-            this.setState({checked: value})
+            console.log('value : ' + value);
+            let parseValue = JSON.parse(value);
+            console.log('parsedValue : ' + parseValue);
+            this.setState({checked: parseValue})
+
         } catch (error){
             console.log("Error retrieving data " + error);
         }
@@ -54,13 +56,18 @@ export default class Task extends Component {
         }catch(error){
             console.log("Error saving data " + error);
         }
-    }
+    } */
 
     checkboxClicked(){
-        this.setState({checked: !this.state.checked});
+        /*this.setState({checked: !this.state.checked});
         this.saveChecked(this.state.checked);
-        console.log(this.state.checked);
+        console.log(this.state.checked); */
+        this.props.callback(this.props.taskKey);
     }
+/*
+    componentDidMount() {
+        this.getChecked()
+    } */
 
     render() {
         return (
@@ -68,7 +75,7 @@ export default class Task extends Component {
                 <Text style={styles.taskText}>{this.props.date}</Text>
                 <Text style={styles.taskText}>{this.props.task}</Text>
                 <View style={styles.checkbox}>
-                <CheckBox style={styles.checkbox} checked={this.state.checked}
+                <CheckBox style={styles.checkbox} checked={this.props.checked}
                           onPress={() => this.checkboxClicked()} />
                 </View>
                 <TouchableOpacity onPress={this.props.deleteMethod} style={styles.taskDelete}>
