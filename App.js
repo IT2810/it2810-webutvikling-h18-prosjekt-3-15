@@ -2,6 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Mainpage from "./components/Mainpage";
 import Todo from "./components/Todo";
+import CountdownComponent from "./components/CountdownComponent.js";
+import Stepcounter from "./components/StepCounter.js"
+import StepCounter from "./components/StepCounter";
 
 import {createStackNavigator} from 'react-navigation';
 import HomeScreen from './Screen/HomeScreen';
