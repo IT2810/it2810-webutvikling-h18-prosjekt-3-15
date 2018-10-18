@@ -8,6 +8,7 @@ import {
     TouchableOpacity, AsyncStorage
 } from 'react-native';
 import Task from './Task.js';
+import CountdownComponent from "./CountdownComponent.js";
 
 export default class Todo extends Component {
     constructor(props){
@@ -50,6 +51,7 @@ export default class Todo extends Component {
         let taskDict = this.state.taskDict;
         return (
             <View style={styles.container}>
+                <CountdownComponent until={2700}/>
                 <View style={styles.header}>
                     <Text style={styles.headerText}>- TASK -</Text>
                 </View>
@@ -126,7 +128,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#4286f4',
         alignItems: 'center',
         justifyContent:'center',
-        opacity: 0.85
+        opacity: 0.85,
+        marginTop:5
     },
     headerText: {
         color: 'white',
@@ -140,7 +143,7 @@ const styles = StyleSheet.create({
     },
     footer: {
         position: 'absolute',
-        top: 47,
+        top: 230,
         left: 0,
         right: 0,
         zIndex: 10
@@ -156,7 +159,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 11,
         right: 5,
-        top: 50,
+        top: 233,
         backgroundColor: '#2fc47c',
         width: 60,
         height: 60,
@@ -169,7 +172,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 10,
         right: 0,
-        top: 47,
+        top: 230,
         backgroundColor: '#252525',
         width: 80,
         height: 68,
