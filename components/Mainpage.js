@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import Subject from './Subject';
+import {Header} from 'react-native-elements';
+
 class Mainpage extends React.Component {
     constructor(props) {
         super(props);
@@ -16,9 +18,9 @@ class Mainpage extends React.Component {
     render() {
         let subDict = this.state.subjects;
         return (
-            <View>
+            <View >
                 <View>
-                    <Text>- Subjects -</Text>
+                    <Header centerComponent={{text: "Subjects"}}/>
                 </View>
                 <ScrollView>
                     {(Object.keys(subDict)).map((key)=> {
@@ -40,12 +42,15 @@ class Mainpage extends React.Component {
                         placeholderTextColor='white'
                         underlineColorAndroid='transparent'>
                     </TextInput>
-                </View>
+
                 <Text style={styles.backgroundInput}/>
                 <TouchableOpacity onPress={()=> this.addSubject()} style={styles.addButton}>
                     <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
+                </View>
+
             </View>
+
         );
     }
 
@@ -85,8 +90,8 @@ class Mainpage extends React.Component {
         backgroundColor: '#4286f4',
         alignItems: 'center',
         justifyContent:'center',
-        borderBottomWidth: 10,
-        borderBottomColor: '#ddd'
+        borderBottomWidth: 2,
+        borderBottomColor: '#ddd',
     },
     headerText: {
         color: 'white',
@@ -108,14 +113,14 @@ class Mainpage extends React.Component {
         alignSelf: 'stretch',
         color: '#fff',
         padding: 20,
-        marginRight: 70,
+        marginRight: 80,
         backgroundColor: '#252525',
     },
     addButton: {
         position: 'absolute',
         zIndex: 11,
         right: 5,
-        top: 90,
+        top: 5,
         backgroundColor: '#2fc47c',
         width: 60,
         height: 60,
@@ -128,7 +133,7 @@ class Mainpage extends React.Component {
         position: 'absolute',
         zIndex: 10,
         right: 0,
-        top: 85,
+        top: 0,
         backgroundColor: '#252525',
         width: 80,
         height: 68,
@@ -140,6 +145,7 @@ class Mainpage extends React.Component {
         color: '#fff',
         fontSize: 24
     }
+
 });
 
 
