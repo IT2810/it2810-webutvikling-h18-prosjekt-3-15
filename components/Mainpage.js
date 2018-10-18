@@ -8,7 +8,7 @@ class Mainpage extends React.Component {
             subjectText: '',
             subjects: {},
             keyCount: 0
-        }
+        };
         this.deleteSubject = this.deleteSubject.bind(this);
         this.addSubject = this.addSubject.bind(this);
     }

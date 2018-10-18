@@ -5,7 +5,7 @@ import {
     StyleSheet,
     TextInput,
     ScrollView,
-    TouchableOpacity
+    TouchableOpacity, AsyncStorage
 } from 'react-native';
 import Task from './Task.js';
 
@@ -20,6 +20,32 @@ export default class Todo extends Component {
         this.deleteTask = this.deleteTask.bind(this);
     }
 
+    async getTaskDict(){
+        try{
+            let value = await AsyncStorage.getItem('taskdict');
+            if(value !== null){
+                console.log('value : ' + value);
+                this.setState(JSON.parse(value))
+            }
+
+        } catch (error){
+            console.log("Error retrieving data " + error);
+        }
+    }
+
+    async saveTaskDict(value){
+        try{
+            await AsyncStorage.setItem('taskdict', JSON.stringify(this.state));
+            console.log("save value : " + JSON.stringify(value));
+        }catch(error){
+            console.log("Error saving data " + error);
+        }
+    }
+
+    componentDidMount(){
+        this.getTaskDict()
+    }
+
     render() {
         let taskDict = this.state.taskDict;
         return (
@@ -29,8 +55,10 @@ export default class Todo extends Component {
                 </View>
                 <ScrollView style={styles.scrollContainer}>
                     {(Object.keys(taskDict)).map((key) => {
-                        return <Task key={key} task={taskDict[key]["taskText"]} date={taskDict[key]["date"]}
-                        deleteMethod = {() => this.deleteTask(key)}/>} )
+                        return <Task key={key} taskKey={key} task={taskDict[key]["taskText"]} date={taskDict[key]["date"]}
+                                     checked={taskDict[key]['checked']}
+                                     deleteMethod = {() => this.deleteTask(key)}
+                                     callback={() => this.checkedBox(key)}/>} )
                     }
                 </ScrollView>
                 <View style={styles.footer}>
@@ -60,6 +88,7 @@ export default class Todo extends Component {
             newDict[keyInt] = {
                 'taskText': this.state.taskText,
                     'date': d.getFullYear() + "/" + (d.getMonth()+1) + "/"+ d.getDate(),
+                'checked': false
             };
             this.setState({
                 ...this.state,
@@ -67,6 +96,7 @@ export default class Todo extends Component {
                 taskDict: newDict,
                 taskText:''
             });
+            this.saveTaskDict(newDict);
         }
     }
 
@@ -76,6 +106,15 @@ export default class Todo extends Component {
         this.setState({
             ...this.state,
             taskDict: newDict});
+    }
+
+    checkedBox(key){
+        let taskDictA = this.state.taskDict;
+        taskDictA[key]['checked'] = ! taskDictA[key]['checked'];
+        this.setState({
+            ...this.state,
+            taskDict: taskDictA
+        })
     }
 
 }
