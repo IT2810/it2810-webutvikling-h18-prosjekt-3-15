@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import { Pedometer } from "expo";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default class StepCounter extends Component{
 
