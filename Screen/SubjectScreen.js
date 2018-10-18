@@ -5,7 +5,7 @@ class SubjectScreen extends React.Component {
     render() {
         return (
             <View>
-                <Todo/>
+                <Todo navigation={this.props.navigation}/>
             </View>
         );
     }
