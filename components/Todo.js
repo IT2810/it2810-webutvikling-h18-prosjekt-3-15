@@ -5,13 +5,15 @@ import {
     StyleSheet,
     TextInput,
     ScrollView,
-    TouchableOpacity, AsyncStorage
+    Button,
+    TouchableOpacity, 
+    AsyncStorage
 } from 'react-native';
 import Task from './Task.js';
 import CountdownComponent from "./CountdownComponent.js";
 
 export default class Todo extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             taskDict: {},
@@ -19,6 +21,7 @@ export default class Todo extends Component {
             taskText: '',
         };
         this.deleteTask = this.deleteTask.bind(this);
+
     }
 
     async getTaskDict(){
@@ -49,20 +52,9 @@ export default class Todo extends Component {
 
     render() {
         let taskDict = this.state.taskDict;
+        const nav = this.props.navigation;
         return (
-            <View style={styles.container}>
-                <CountdownComponent until={2700}/>
-                <View style={styles.header}>
-                    <Text style={styles.headerText}>- TASK -</Text>
-                </View>
-                <ScrollView style={styles.scrollContainer}>
-                    {(Object.keys(taskDict)).map((key) => {
-                        return <Task key={key} taskKey={key} task={taskDict[key]["taskText"]} date={taskDict[key]["date"]}
-                                     checked={taskDict[key]['checked']}
-                                     deleteMethod = {() => this.deleteTask(key)}
-                                     callback={() => this.checkedBox(key)}/>} )
-                    }
-                </ScrollView>
+            <View>
                 <View style={styles.footer}>
                     <TextInput
                         style={styles.textInput}
@@ -78,6 +70,16 @@ export default class Todo extends Component {
                 <TouchableOpacity onPress={ this.addTask.bind(this) } style={styles.addButton}>
                     <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
+                <View style={styles.scrollViewContainer}>
+                    <ScrollView>
+                        {(Object.keys(taskDict)).map((key) => {
+                            return <Task key={key} taskKey={key} task={taskDict[key]["taskText"]} date={taskDict[key]["date"]} navigation={nav}
+                                         checked={taskDict[key]['checked']}
+                                         deleteMethod = {() => this.deleteTask(key)}
+                                         callback={() => this.checkedBox(key)}/>} )
+                        }
+                    </ScrollView>
+                </View>
             </View>
         );
     }
@@ -124,26 +126,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
-    header: {
-        backgroundColor: '#4286f4',
-        alignItems: 'center',
-        justifyContent:'center',
-        opacity: 0.85,
-        marginTop:5
-    },
-    headerText: {
-        color: 'white',
-        fontSize: 22,
-        fontWeight: 'bold',
-        padding: 10
-    },
-    scrollContainer: {
-        flex: 1,
-        marginTop:63,
+    scrollViewContainer:{
+        height: 550,
+        marginTop:70,
     },
     footer: {
         position: 'absolute',
-        top: 230,
+        top: 0,
         left: 0,
         right: 0,
         zIndex: 10
@@ -159,7 +148,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 11,
         right: 5,
-        top: 233,
+        top: 3,
         backgroundColor: '#2fc47c',
         width: 60,
         height: 60,
@@ -172,7 +161,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 10,
         right: 0,
-        top: 230,
+        top: 0,
         backgroundColor: '#252525',
         width: 80,
         height: 68,

@@ -6,15 +6,50 @@ import CountdownComponent from "./components/CountdownComponent.js";
 import Stepcounter from "./components/StepCounter.js"
 import StepCounter from "./components/StepCounter";
 
+import {createStackNavigator} from 'react-navigation';
+import HomeScreen from './Screen/HomeScreen';
+import SubjectScreen from './Screen/SubjectScreen';
 
-export default class App extends React.Component{
-	//TODO: Add logic to change between views Mainpage and Todo
+
+const RootStack = createStackNavigator(
+    {
+        Home: {
+            screen: HomeScreen,
+            navigationOptions: {
+                title: "Subject",
+                headerStyle:{
+                    backgroundColor: '#4286f4'
+                },
+                headerTitleStyle:{
+                        textAlign: 'center',
+                        fontWeight: 'bold',
+
+                },
+                headerTintColor: '#fff',
+            }
+        },
+        Subjects: {
+            screen: SubjectScreen,
+            navigationOptions: {
+                title: "Todo-list"
+            }
+        },
+    },
+    {
+        initialRouteName: 'Home',
+    }
+);
+
+export default class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state ={
+            navigation: this.props.navigation
+        }
+    }
+
     render() {
-        return (
-            <View style={styles.container}>
-                <StepCounter/>
-            </View>
-        );
+        return <RootStack navigation={this.state.navigation}/>;
     }
 }
 

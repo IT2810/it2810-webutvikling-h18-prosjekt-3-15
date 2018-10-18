@@ -1,51 +1,57 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, Button } from 'react-native';
 import Subject from './Subject';
+import {createStackNavigator} from 'react-navigation';
+import {Header} from 'react-native-elements';
+
+import Todo from './Todo';
+
 class Mainpage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             subjectText: '',
             subjects: {},
-            keyCount: 0
-        };
+            keyCount: 0,
+        }
         this.deleteSubject = this.deleteSubject.bind(this);
         this.addSubject = this.addSubject.bind(this);
     }
 
     render() {
         let subDict = this.state.subjects;
+        const nav = this.props.navigation;
         return (
             <View>
-                <View>
-                    <Text>- Subjects -</Text>
-                </View>
-                <ScrollView>
-                    {(Object.keys(subDict)).map((key)=> {
-                        return (<Subject key={key} subject={subDict[key]["subjectText"]} url={[key]["url"]}
-                                        deleteMethod={() => this.deleteSubject(key)}/>)
+                <TextInput
+                    style={styles.textInput}
+                    placeholder={"Add subjects here"}
+                    onChangeText={(subjectText) => {
+                        this.setState({subjectText});
+                    }}
+                    value={this.state.subjectText}
+                    placeholderTextColor='white'
+                    underlineColorAndroid='transparent'>
+                </TextInput>
 
-
-                    })}
-
-                </ScrollView>
-                <View>
-                    <TextInput
-                        style={styles.textInput}
-                        placeholder={"Add subjects here"}
-                        onChangeText={(subjectText) => {
-                            this.setState({subjectText});
-                        }}
-                        value={this.state.subjectText}
-                        placeholderTextColor='white'
-                        underlineColorAndroid='transparent'>
-                    </TextInput>
-                </View>
                 <Text style={styles.backgroundInput}/>
                 <TouchableOpacity onPress={()=> this.addSubject()} style={styles.addButton}>
                     <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
+                <View style={styles.scrollViewContainer}>
+                    <ScrollView contentContainerStyle={styles.scrollContainer}>
+                            {(Object.keys(subDict)).map((key)=> {
+                                return (<Subject
+                                    key={key}
+                                    subject={subDict[key]["subjectText"]}
+                                    url={[key]["url"] }
+                                    navigation={nav}
+                                    deleteMethod={() => this.deleteSubject(key)}/>)
+                            })}
+                    </ScrollView>
+                </View>
             </View>
+
         );
     }
 
@@ -77,6 +83,21 @@ class Mainpage extends React.Component {
         })
     }
 }
+    const rootStack = createStackNavigator(
+        {
+
+        Home: {
+            screen: Mainpage,
+        },
+        Subjects:{
+            screen: Todo,
+        },
+        },
+        {
+            initialRoute: 'Home',
+        }
+    );
+
     const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -85,17 +106,16 @@ class Mainpage extends React.Component {
         backgroundColor: '#4286f4',
         alignItems: 'center',
         justifyContent:'center',
-        borderBottomWidth: 10,
-        borderBottomColor: '#ddd'
+        borderBottomWidth: 2,
+        borderBottomColor: '#ddd',
     },
     headerText: {
         color: 'white',
         fontSize: 18,
         padding: 26
     },
-    scrollContainer: {
-        flex: 1,
-        marginTop:63,
+    scrollViewContainer:{
+        height: 550,
     },
     footer: {
         position: 'absolute',
@@ -108,14 +128,14 @@ class Mainpage extends React.Component {
         alignSelf: 'stretch',
         color: '#fff',
         padding: 20,
-        marginRight: 70,
+        marginRight: 80,
         backgroundColor: '#252525',
     },
     addButton: {
         position: 'absolute',
         zIndex: 11,
         right: 5,
-        top: 90,
+        top: 5,
         backgroundColor: '#2fc47c',
         width: 60,
         height: 60,
@@ -128,7 +148,7 @@ class Mainpage extends React.Component {
         position: 'absolute',
         zIndex: 10,
         right: 0,
-        top: 85,
+        top: 0,
         backgroundColor: '#252525',
         width: 80,
         height: 68,
@@ -141,6 +161,5 @@ class Mainpage extends React.Component {
         fontSize: 24
     }
 });
-
 
 export default Mainpage;
