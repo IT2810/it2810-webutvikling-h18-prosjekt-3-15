@@ -10,7 +10,6 @@ import {createStackNavigator} from 'react-navigation';
 import HomeScreen from './Screen/HomeScreen';
 import SubjectScreen from './Screen/SubjectScreen';
 
-
 const RootStack = createStackNavigator(
     {
         Home: {
