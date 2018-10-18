@@ -163,5 +163,4 @@ class Mainpage extends React.Component {
 
 });
 
-
 export default Mainpage;
