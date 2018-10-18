@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, StyleSheet} from 'react-native';
-import Todo from "./Todo";
 import Countdown from "./CountDown";
 import {Button} from "react-native-elements";
 
@@ -8,20 +7,20 @@ export default class App extends React.Component {
 	constructor(props){
 		super(props);
 		this.state={
-			timerPaused : false
+			timerPaused : true
 		}
 	}
 
 	render() {
 		return (
-			<View style={styles.container}>
+			<View>
 				{/*Countdown screen- Move to list-view when ready*/}
 				<Countdown
 					style={styles.countdown}
 					until={this.props.until}
 					timeToShow={['M', 'S']}
 					paused={this.state.timerPaused}/>
-				<Button title={"Pause"} onPress={() => this.pauseTimer()}/>
+				<Button title={"Play/Pause"} onPress={() => this.pauseTimer()}/>
 			</View>
 		);
 	}
@@ -34,13 +33,7 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		justifyContent: 'center',
-		flexDirection: 'column',
-	},
-	countdown:{
-		marginTop: 30,
-	}
+    countdown:{
+        marginTop: 7,
+    }
 });

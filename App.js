@@ -2,33 +2,40 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Mainpage from "./components/Mainpage";
 import Todo from "./components/Todo";
+import CountdownComponent from "./components/CountdownComponent.js";
+import Stepcounter from "./components/StepCounter.js"
+import StepCounter from "./components/StepCounter";
 
 import {createStackNavigator} from 'react-navigation';
 import HomeScreen from './Screen/HomeScreen';
 import SubjectScreen from './Screen/SubjectScreen';
-
 
 const RootStack = createStackNavigator(
     {
         Home: {
             screen: HomeScreen,
             navigationOptions: {
-                title: "Subject",
-                headerStyle:{
+                title: "Subjects",
+                headerStyle: {
                     backgroundColor: '#4286f4'
                 },
                 headerTitleStyle:{
-                        textAlign: 'center',
-                        fontWeight: 'bold',
-
-                },
-                headerTintColor: '#fff',
+                    color: '#fff',
+                    textAlign: 'center'
+                }
             }
         },
         Subjects: {
             screen: SubjectScreen,
             navigationOptions: {
-                title: "Todo-list"
+                title: "Todo-list",
+                headerStyle: {
+                    backgroundColor: '#4286f4'
+                },
+                headerTitleStyle: {
+                    textAlign: 'center',
+                    color: '#fff',
+                }
             }
         },
     },

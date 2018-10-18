@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, Button } from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, AsyncStorage } from 'react-native';
 import Subject from './Subject';
 import {createStackNavigator} from 'react-navigation';
 import {Header} from 'react-native-elements';
 
 import Todo from './Todo';
+import StepCounter from "./StepCounter";
 
 class Mainpage extends React.Component {
     constructor(props) {
@@ -13,9 +14,34 @@ class Mainpage extends React.Component {
             subjectText: '',
             subjects: {},
             keyCount: 0,
-        }
+        };
         this.deleteSubject = this.deleteSubject.bind(this);
         this.addSubject = this.addSubject.bind(this);
+    }
+
+    async getSubjectDict(){
+        try{
+            let value = await AsyncStorage.getItem('subjects');
+            if(value !== null){
+                this.setState(JSON.parse(value));
+                //console.log('value: ' + value);
+            }
+        }
+            catch(error){
+                console.log("Error retrieving data: " +  error)
+            }
+        }
+    async saveSubjects(value){
+        try{
+            await AsyncStorage.setItem('subjects', JSON.stringify(this.state.subjects));
+            //console.log("save value : " + JSON.stringify(this.state.subjects));
+        }catch(error){
+            console.log("Error saving data " + error);
+        }
+    }
+
+    componentDidMount(){
+        this.getSubjectDict()
     }
 
     render() {
@@ -23,6 +49,7 @@ class Mainpage extends React.Component {
         const nav = this.props.navigation;
         return (
             <View>
+                <StepCounter style={styles.StepStyling}/>
                 <TextInput
                     style={styles.textInput}
                     placeholder={"Add subjects here"}
@@ -37,17 +64,19 @@ class Mainpage extends React.Component {
                 <Text style={styles.backgroundInput}/>
                 <TouchableOpacity onPress={()=> this.addSubject()} style={styles.addButton}>
                     <Text style={styles.addButtonText}>+</Text>
-                </TouchableOpacity> 
-                <ScrollView contentContainerStyle={styles.scrollContainer}>
-                        {(Object.keys(subDict)).map((key)=> {
-                            return (<Subject
-                                key={key}
-                                subject={subDict[key]["subjectText"]}
-                                url={[key]["url"] }
-                                navigation={nav}
-                                deleteMethod={() => this.deleteSubject(key)}/>)
-                        })}
-                </ScrollView>
+                </TouchableOpacity>
+                <View style={styles.scrollViewContainer}>
+                    <ScrollView contentContainerStyle={styles.scrollContainer}>
+                            {(Object.keys(subDict)).map((key)=> {
+                                return (<Subject
+                                    key={key}
+                                    subject={subDict[key]["subjectText"]}
+                                    url={subDict[key]["url"] }
+                                    navigation={nav}
+                                    deleteMethod={() => this.deleteSubject(key)}/>)
+                            })}
+                    </ScrollView>
+                </View>
             </View>
 
         );
@@ -60,6 +89,7 @@ class Mainpage extends React.Component {
             newDict[keyInt] = {
                 'subjectText': this.state.subjectText,
                 'url': "/" + keyInt + "/" + this.state.subjectText,
+                'keyCount': keyInt,
             };
             this.setState({
                 ...this.state,
@@ -67,6 +97,7 @@ class Mainpage extends React.Component {
                 subjects: newDict,
                 subjectText: ''
             });
+            this.saveSubjects(newDict)
 
 
         }
@@ -81,24 +112,13 @@ class Mainpage extends React.Component {
         })
     }
 }
-    const rootStack = createStackNavigator(
-        {
-
-        Home: {
-            screen: Mainpage,
-        },
-        Subjects:{
-            screen: Todo,
-        },
-        },
-        {
-            initialRoute: 'Home',
-        }
-    );
 
     const styles = StyleSheet.create({
     container: {
         flex: 1,
+    },
+    StepStyling: {
+
     },
     header: {
         backgroundColor: '#4286f4',
@@ -112,10 +132,8 @@ class Mainpage extends React.Component {
         fontSize: 18,
         padding: 26
     },
-    scrollContainer: {
-        paddingVertical: 10,
-        justifyContent: 'space-between',
-
+    scrollViewContainer:{
+        height: 460
     },
     footer: {
         position: 'absolute',
@@ -135,7 +153,7 @@ class Mainpage extends React.Component {
         position: 'absolute',
         zIndex: 11,
         right: 5,
-        top: 5,
+        top: 80,
         backgroundColor: '#2fc47c',
         width: 60,
         height: 60,
@@ -148,7 +166,7 @@ class Mainpage extends React.Component {
         position: 'absolute',
         zIndex: 10,
         right: 0,
-        top: 0,
+        top: 76,
         backgroundColor: '#252525',
         width: 80,
         height: 68,
@@ -160,7 +178,6 @@ class Mainpage extends React.Component {
         color: '#fff',
         fontSize: 24
     }
-
 });
 
 export default Mainpage;
