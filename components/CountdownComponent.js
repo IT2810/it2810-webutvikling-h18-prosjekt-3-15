@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, StyleSheet} from 'react-native';
-import Todo from "./Todo";
 import Countdown from "./CountDown";
 import {Button} from "react-native-elements";
 

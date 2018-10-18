@@ -5,6 +5,7 @@ import {createStackNavigator} from 'react-navigation';
 import {Header} from 'react-native-elements';
 
 import Todo from './Todo';
+import StepCounter from "./StepCounter";
 
 class Mainpage extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class Mainpage extends React.Component {
             subjectText: '',
             subjects: {},
             keyCount: 0,
-        }
+        };
         this.deleteSubject = this.deleteSubject.bind(this);
         this.addSubject = this.addSubject.bind(this);
     }
@@ -23,6 +24,7 @@ class Mainpage extends React.Component {
         const nav = this.props.navigation;
         return (
             <View>
+                <StepCounter style={styles.StepStyling}/>
                 <TextInput
                     style={styles.textInput}
                     placeholder={"Add subjects here"}
@@ -102,6 +104,9 @@ class Mainpage extends React.Component {
     container: {
         flex: 1,
     },
+    StepStyling: {
+
+    },
     header: {
         backgroundColor: '#4286f4',
         alignItems: 'center',
@@ -115,7 +120,7 @@ class Mainpage extends React.Component {
         padding: 26
     },
     scrollViewContainer:{
-        height: 550,
+        height: 460
     },
     footer: {
         position: 'absolute',
@@ -135,7 +140,7 @@ class Mainpage extends React.Component {
         position: 'absolute',
         zIndex: 11,
         right: 5,
-        top: 5,
+        top: 80,
         backgroundColor: '#2fc47c',
         width: 60,
         height: 60,
@@ -148,7 +153,7 @@ class Mainpage extends React.Component {
         position: 'absolute',
         zIndex: 10,
         right: 0,
-        top: 0,
+        top: 76,
         backgroundColor: '#252525',
         width: 80,
         height: 68,

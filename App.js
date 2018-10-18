@@ -10,13 +10,12 @@ import {createStackNavigator} from 'react-navigation';
 import HomeScreen from './Screen/HomeScreen';
 import SubjectScreen from './Screen/SubjectScreen';
 
-
 const RootStack = createStackNavigator(
     {
         Home: {
             screen: HomeScreen,
             navigationOptions: {
-                title: "Subject",
+                title: "Subject ",
                 headerStyle:{
                     backgroundColor: '#4286f4'
                 },

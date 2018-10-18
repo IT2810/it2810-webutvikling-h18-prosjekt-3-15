@@ -15,12 +15,13 @@ export default class StepCounter extends Component{
 	}
 
 
-
 	/*resetSteps(){
 		this.setState({
 			startDate: new Date()
 		});
 	}*/
+
+
 
 	componentDidMount() {
 		//this.resetSteps();
@@ -47,10 +48,24 @@ export default class StepCounter extends Component{
 
 	render() {
 		return(
-			<View>
-				<Text>Steps: {this.state.stepCount}</Text>
+			<View style={styles.stepContainer}>
+				<Text style={styles.stepStyling}>Steps taken today: {this.state.stepCount}</Text>
 			</View>
 		)
 	}
 
 };
+
+const styles = StyleSheet.create({
+    stepContainer: {
+        backgroundColor: '#b0b4ba',
+        alignItems: 'center',
+        justifyContent:'center',
+    },
+    stepStyling:{
+        color: 'white',
+        fontSize: 18,
+        padding: 26
+	}
+
+});
