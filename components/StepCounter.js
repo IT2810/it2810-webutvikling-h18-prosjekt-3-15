@@ -9,22 +9,21 @@ export default class StepCounter extends Component{
 		super(props);
 
 		this.state = {
-			startDate: new Date(),
-			endDate: new Date,
+
 			stepCount: 0
 		}
 	}
 
 
 
-	resetSteps(){
+	/*resetSteps(){
 		this.setState({
 			startDate: new Date()
 		});
-	}
+	}*/
 
 	componentDidMount() {
-		this.resetSteps();
+		//this.resetSteps();
 		this._subscribe();
 	}
 
@@ -34,16 +33,9 @@ export default class StepCounter extends Component{
 
 	_subscribe = () => {
 		this._subscription = Pedometer.watchStepCount(result => {
-			// If resetStepCount is true, we'll set the current stepCount to what is current.
-			Pedometer.getStepCountAsync(this.state.startDate, new Date()).then(
-				result => {
-					this.setState({
-						stepCount: result.steps
-					});
-				}
-			);
-
-
+		    this.setState({
+                stepCount: result.steps
+            });
 		});
 	};
 	_unsubscribe = () => {
