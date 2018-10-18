@@ -50,6 +50,10 @@ export default class Todo extends Component {
         this.getTaskDict()
     }
 
+    componentWillUnmount(){
+        this.saveTaskDict(this.state.taskDict)
+    }
+
     render() {
         let taskDict = this.state.taskDict;
         const nav = this.props.navigation;
