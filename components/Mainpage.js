@@ -22,9 +22,13 @@ class Mainpage extends React.Component {
     async getSubjectDict(){
         try{
             let value = await AsyncStorage.getItem('subjects');
+            let maxKey = this.getMaxKey(JSON.parse(value));
             if(value !== null){
-                this.setState(JSON.parse(value));
-                //console.log('value: ' + value);
+                this.setState({
+					...this.state,
+                	subjects: JSON.parse(value),
+					keyCount: maxKey
+			});
             }
         }
             catch(error){
@@ -98,8 +102,6 @@ class Mainpage extends React.Component {
                 subjectText: ''
             });
             this.saveSubjects(newDict)
-
-
         }
     }
 
@@ -109,8 +111,15 @@ class Mainpage extends React.Component {
         this.setState({
             ...this.state,
             subjects: newDict
-        })
+        });
+		this.saveSubjects(newDict)
+
+
     }
+
+    getMaxKey(obj){
+		return Object.keys(obj).reduce((a, b) => obj[a] > obj[b] ? a : b);
+	}
 }
 
     const styles = StyleSheet.create({
