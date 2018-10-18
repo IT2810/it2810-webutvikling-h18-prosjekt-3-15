@@ -22,34 +22,32 @@ class Mainpage extends React.Component {
         let subDict = this.state.subjects;
         const nav = this.props.navigation;
         return (
-            <View >
-                <ScrollView>
-                    {(Object.keys(subDict)).map((key)=> {
-                        return (<Subject
-                            key={key}
-                            subject={subDict[key]["subjectText"]}
-                            url={[key]["url"] }
-                            navigation={nav}
-                            deleteMethod={() => this.deleteSubject(key)}/>)
-                    })}
-                </ScrollView>
-                <View>
-                    <TextInput
-                        style={styles.textInput}
-                        placeholder={"Add subjects here"}
-                        onChangeText={(subjectText) => {
-                            this.setState({subjectText});
-                        }}
-                        value={this.state.subjectText}
-                        placeholderTextColor='white'
-                        underlineColorAndroid='transparent'>
-                    </TextInput>
+            <View>
+                <TextInput
+                    style={styles.textInput}
+                    placeholder={"Add subjects here"}
+                    onChangeText={(subjectText) => {
+                        this.setState({subjectText});
+                    }}
+                    value={this.state.subjectText}
+                    placeholderTextColor='white'
+                    underlineColorAndroid='transparent'>
+                </TextInput>
 
                 <Text style={styles.backgroundInput}/>
                 <TouchableOpacity onPress={()=> this.addSubject()} style={styles.addButton}>
                     <Text style={styles.addButtonText}>+</Text>
-                </TouchableOpacity>
-                </View>
+                </TouchableOpacity> 
+                <ScrollView contentContainerStyle={styles.scrollContainer}>
+                        {(Object.keys(subDict)).map((key)=> {
+                            return (<Subject
+                                key={key}
+                                subject={subDict[key]["subjectText"]}
+                                url={[key]["url"] }
+                                navigation={nav}
+                                deleteMethod={() => this.deleteSubject(key)}/>)
+                        })}
+                </ScrollView>
             </View>
 
         );
@@ -97,6 +95,7 @@ class Mainpage extends React.Component {
             initialRoute: 'Home',
         }
     );
+
     const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -114,8 +113,9 @@ class Mainpage extends React.Component {
         padding: 26
     },
     scrollContainer: {
-        flex: 1,
-        marginTop:63,
+        paddingVertical: 10,
+        justifyContent: 'space-between',
+
     },
     footer: {
         position: 'absolute',
