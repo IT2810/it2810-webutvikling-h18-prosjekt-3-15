@@ -1,24 +1,35 @@
 import React from 'react';
 import { View, StyleSheet} from 'react-native';
 import Todo from "./Todo";
-import CountdownComponent from "./CountdownComponent";
+import Countdown from "./CountDown";
+import {Button} from "react-native-elements";
 
 export default class App extends React.Component {
 	constructor(props){
 		super(props);
+		this.state={
+			timerPaused : false
+		}
 	}
 
 	render() {
 		return (
 			<View style={styles.container}>
 				{/*Countdown screen- Move to list-view when ready*/}
-				<CountdownComponent
+				<Countdown
 					style={styles.countdown}
-					until={2700}
-					timeToShow={['M', 'S']}/>
-				<Todo/>
+					until={this.props.until}
+					timeToShow={['M', 'S']}
+					paused={this.state.timerPaused}/>
+				<Button title={"Pause"} onPress={() => this.pauseTimer()}/>
 			</View>
 		);
+	}
+	pauseTimer(){
+		this.setState({
+			...this.state,
+			timerPaused: ! this.state.timerPaused
+		})
 	}
 }
 

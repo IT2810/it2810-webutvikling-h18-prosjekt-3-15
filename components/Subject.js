@@ -8,7 +8,6 @@ import {
     Button,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {} from 'react-navigation';
 
 
 export default class Subject extends React.Component{
