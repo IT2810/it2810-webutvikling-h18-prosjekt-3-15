@@ -1,13 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Mainpage from "./components/Mainpage";
+import Todo from "./components/Todo";
 
 
 export default class App extends React.Component{
 	//TODO: Add logic to change between views Mainpage and Todo
     render() {
         return (
-            <Mainpage/>
+            <Todo/>
         );
     }
 }
