@@ -5,12 +5,14 @@ import {
     StyleSheet,
     TextInput,
     ScrollView,
-    TouchableOpacity, AsyncStorage
+    Button,
+    TouchableOpacity, 
+    AsyncStorage
 } from 'react-native';
 import Task from './Task.js';
 
 export default class Todo extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             taskDict: {},
@@ -18,6 +20,7 @@ export default class Todo extends Component {
             taskText: '',
         };
         this.deleteTask = this.deleteTask.bind(this);
+
     }
 
     async getTaskDict(){
@@ -48,6 +51,7 @@ export default class Todo extends Component {
 
     render() {
         let taskDict = this.state.taskDict;
+        const nav = this.props.navigation;
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
@@ -55,7 +59,7 @@ export default class Todo extends Component {
                 </View>
                 <ScrollView style={styles.scrollContainer}>
                     {(Object.keys(taskDict)).map((key) => {
-                        return <Task key={key} taskKey={key} task={taskDict[key]["taskText"]} date={taskDict[key]["date"]}
+                        return <Task key={key} taskKey={key} task={taskDict[key]["taskText"]} date={taskDict[key]["date"]} navigation={nav}
                                      checked={taskDict[key]['checked']}
                                      deleteMethod = {() => this.deleteTask(key)}
                                      callback={() => this.checkedBox(key)}/>} )
@@ -76,6 +80,7 @@ export default class Todo extends Component {
                 <TouchableOpacity onPress={ this.addTask.bind(this) } style={styles.addButton}>
                     <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
+                <Button title="Go back" onPress={()=> nav.goBack()}/>
             </View>
         );
     }
