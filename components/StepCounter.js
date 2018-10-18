@@ -23,19 +23,23 @@ export default class StepCounter extends Component{
 
 
 	componentDidMount() {
-		//this.resetSteps();
-		let today = new Date();
-		today.setHours(0, 0, 0, 1);
-		let rightNow = new Date();
-		Pedometer.getStepCountAsync(today, rightNow ).then(
-			result => {
-				this.setState({
-					...this.state,
-					stepCount: result.steps
-				})
-			}
-		);
+		this.refreshStepCount();
 		this._subscribe();
+	}
+
+	refreshStepCount(){
+        //this.resetSteps();
+        let today = new Date();
+        today.setHours(0, 0, 0, 1);
+        let rightNow = new Date();
+        Pedometer.getStepCountAsync(today, rightNow ).then(
+            result => {
+                this.setState({
+                    ...this.state,
+                    stepCount: result.steps
+                })
+            }
+        );
 	}
 
 	componentWillUnmount() {
@@ -43,11 +47,8 @@ export default class StepCounter extends Component{
 	}
 
 	_subscribe = () => {
-		this._subscription = Pedometer.watchStepCount(result => {
-			let newStepCount = this.state.stepCount + result.steps;
-		    this.setState({
-                stepCount: newStepCount
-            });
+		this._subscription = Pedometer.watchStepCount( () => {
+			this.refreshStepCount();
 		});
 	};
 	_unsubscribe = () => {
