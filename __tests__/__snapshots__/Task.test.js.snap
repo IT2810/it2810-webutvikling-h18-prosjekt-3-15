@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomColor": "#ededed",
+      "borderBottomWidth": 2,
+      "padding": 20,
+      "paddingRight": 100,
+      "position": "relative",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "borderLeftColor": "#4286f4",
+        "borderLeftWidth": 15,
+        "opacity": 0.7,
+        "paddingLeft": 20,
+        "paddingRight": 5,
+      }
+    }
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "borderLeftColor": "#4286f4",
+        "borderLeftWidth": 15,
+        "opacity": 0.7,
+        "paddingLeft": 20,
+        "paddingRight": 5,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "bottom": 10,
+        "justifyContent": "center",
+        "position": "absolute",
+        "right": 65,
+        "top": 10,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#fafafa",
+          "borderColor": "#ededed",
+          "borderRadius": 3,
+          "borderWidth": 1,
+          "margin": 5,
+          "marginLeft": 10,
+          "marginRight": 10,
+          "opacity": 1,
+          "padding": 10,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            },
+            false,
+            false,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "#bfbfbf",
+                "fontSize": 24,
+              },
+              undefined,
+              Object {
+                "fontFamily": "FontAwesome",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {},
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Array [
+                Object {
+                  "color": "#43484d",
+                  "fontWeight": "bold",
+                  "marginLeft": 10,
+                  "marginRight": 10,
+                },
+                undefined,
+                undefined,
+              ],
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#f44141",
+        "bottom": 15,
+        "justifyContent": "center",
+        "opacity": 1,
+        "padding": 10,
+        "position": "absolute",
+        "right": 10,
+        "top": 15,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+    >
+      Delete
+    </Text>
+  </View>
+</View>
+`;
