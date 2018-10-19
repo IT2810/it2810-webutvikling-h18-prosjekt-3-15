@@ -44,6 +44,12 @@ class CountDown extends React.Component {
 		wentBackgroundAt: null,
 	};
 
+
+
+	IsFinished(){
+		return this.getTimeLeft() === 0;
+	}
+
 	componentDidMount() {
 		if (this.props.onFinish) {
 			this.onFinish = _.once(this.props.onFinish);
@@ -74,7 +80,7 @@ class CountDown extends React.Component {
 		if (currentAppState === 'background') {
 			this.setState({wentBackgroundAt: Date.now()});
 		}
-	}
+	};
 
 	getTimeLeft = () => {
 		const {until} = this.state;
