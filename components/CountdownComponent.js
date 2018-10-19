@@ -14,7 +14,6 @@ export default class App extends React.Component {
 
 	render() {
 	    let timeLeft = this.state.timerFinished ? 0 : this.props.until;
-	    console.log("Time left: " + timeLeft);
 	    let buttonFunction = this.state.timerFinished ? (() => this.resetTimer()) : (() => this.pauseTimer());
 	    let buttonTitle = this.state.timerFinished ? "Reset Timer" : "Play/Pause";
 		return (

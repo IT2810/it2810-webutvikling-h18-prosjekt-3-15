@@ -9,3 +9,9 @@ it('renders correctly', () => {
         .toJSON();
     expect(tree).toMatchSnapshot();
 });
+it('check start state', ()=>{
+    const tree = renderer.create(<Todo navigation={{'state':{'params':{'url': '/1/test/'}}}}/>).getInstance();
+    let x = tree.state;
+    console.log(x);
+    expect(Object.is({taskDict: {}, keyCount: 0, taskText: '', urlKey: '/1/test/'}, x))
+})
