@@ -45,11 +45,6 @@ class CountDown extends React.Component {
 	};
 
 
-
-	IsFinished(){
-		return this.getTimeLeft() === 0;
-	}
-
 	componentDidMount() {
 		if (this.props.onFinish) {
 			this.onFinish = _.once(this.props.onFinish);
@@ -108,6 +103,10 @@ class CountDown extends React.Component {
 			}
 		}
 	};
+
+	resetTimer(time){
+		this.props.until = time;
+	}
 
 	renderDigit = (d) => {
 		const {digitBgColor, digitTxtColor, size} = this.props;
