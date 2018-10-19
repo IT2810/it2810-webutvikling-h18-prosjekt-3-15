@@ -2,8 +2,8 @@
 
 exports[`renders correctly 1`] = `
 <Component>
-  <App
-    until={5}
+  <CountdownComponent
+    until={2700}
   />
   <Component
     style={
