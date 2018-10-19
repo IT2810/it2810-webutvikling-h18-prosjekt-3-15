@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Component>
+  <StepCounter
+    style={Object {}}
+  />
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    placeholder="Add subjects here"
+    placeholderTextColor="white"
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#252525",
+        "color": "#fff",
+        "marginRight": 80,
+        "padding": 20,
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#252525",
+        "elevation": 8,
+        "height": 68,
+        "justifyContent": "center",
+        "position": "absolute",
+        "right": 0,
+        "top": 76,
+        "width": 80,
+        "zIndex": 10,
+      }
+    }
+  />
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#2fc47c",
+        "borderRadius": 35,
+        "elevation": 8,
+        "height": 60,
+        "justifyContent": "center",
+        "position": "absolute",
+        "right": 5,
+        "top": 80,
+        "width": 60,
+        "zIndex": 11,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#fff",
+          "fontSize": 24,
+        }
+      }
+    >
+      +
+    </Text>
+  </TouchableOpacity>
+  <Component
+    style={
+      Object {
+        "height": 460,
+      }
+    }
+  >
+    <ScrollViewMock />
+  </Component>
+</Component>
+`;

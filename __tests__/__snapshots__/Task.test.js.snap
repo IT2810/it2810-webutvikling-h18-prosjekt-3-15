@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Component
+  style={
+    Object {
+      "borderBottomColor": "#ededed",
+      "borderBottomWidth": 2,
+      "padding": 20,
+      "paddingRight": 100,
+      "position": "relative",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "borderLeftColor": "#4286f4",
+        "borderLeftWidth": 15,
+        "opacity": 0.7,
+        "paddingLeft": 20,
+        "paddingRight": 5,
+      }
+    }
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "borderLeftColor": "#4286f4",
+        "borderLeftWidth": 15,
+        "opacity": 0.7,
+        "paddingLeft": 20,
+        "paddingRight": 5,
+      }
+    }
+  />
+  <Component
+    style={
+      Object {
+        "alignItems": "center",
+        "bottom": 10,
+        "justifyContent": "center",
+        "position": "absolute",
+        "right": 65,
+        "top": 10,
+      }
+    }
+  >
+    <CheckBox
+      center={false}
+      checked={false}
+      checkedColor="green"
+      checkedIcon="check-square-o"
+      iconRight={false}
+      onPress={[Function]}
+      right={false}
+      size={24}
+      style={
+        Object {
+          "alignItems": "center",
+          "bottom": 10,
+          "justifyContent": "center",
+          "position": "absolute",
+          "right": 65,
+          "top": 10,
+        }
+      }
+      uncheckedColor="#bfbfbf"
+      uncheckedIcon="square-o"
+    />
+  </Component>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#f44141",
+        "bottom": 15,
+        "justifyContent": "center",
+        "padding": 10,
+        "position": "absolute",
+        "right": 10,
+        "top": 15,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+    >
+      Delete
+    </Text>
+  </TouchableOpacity>
+</Component>
+`;

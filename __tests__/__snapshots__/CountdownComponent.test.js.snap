@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Component>
+  <CountDown
+    digitBgColor="#4286f4"
+    digitTxtColor="#000"
+    labelD="Days"
+    labelH="Hours"
+    labelM="Minutes"
+    labelS="Seconds"
+    onFinish={[Function]}
+    paused={true}
+    size={30}
+    style={
+      Object {
+        "marginTop": 7,
+      }
+    }
+    timeToShow={
+      Array [
+        "M",
+        "S",
+      ]
+    }
+    timeTxtColor="#000"
+    until={0}
+  />
+  <Button
+    onPress={[Function]}
+    title="Play/Pause"
+  />
+</Component>
+`;
