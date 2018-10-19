@@ -1,10 +1,9 @@
 import React from 'react';
 import Button from '../components/Button';
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 it('renders correctly', () => {
-	const tree = renderer
-		.create(<Button></Button>)
-		.toJSON();
-	expect(tree).toMatchSnapshot();
+    const renderer = new ShallowRenderer();
+    const tree = renderer.render(<Button/>);
+    expect(tree).toMatchSnapshot();
 });

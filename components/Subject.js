@@ -22,7 +22,7 @@ export default class Subject extends React.Component{
         return (
             <View key={this.props.keyval} style={styles.subject}>
                 <TouchableOpacity style={styles.subjectContainer}>
-                    <Button title={this.props.subject} onPress={()=> nav.navigate('Subjects', {url: this.state.url})}/>
+                    <Button title={this.props.subject} onPress={()=> nav.navigate('Subjects', {url: this.state.url})}>Hello</Button>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this.props.deleteMethod} style={styles.subjectDelete}>
                     <Text style={styles.subjectDeleteText}>Delete</Text>
