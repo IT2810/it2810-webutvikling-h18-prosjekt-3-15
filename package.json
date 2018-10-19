@@ -6,7 +6,8 @@
 		"start": "expo start",
 		"android": "expo start --android",
 		"ios": "expo start --ios",
-		"eject": "expo eject"
+		"eject": "expo eject",
+		"test": "node_modules/.bin/jest"
 	},
 	"dependencies": {
 		"@expo/vector-icons": "^8.0.0",
@@ -25,6 +26,10 @@
 	},
 	"devDependencies": {
 		"enzyme": "^3.6.0",
-		"enzyme-adapter-react-16": "^1.5.0"
-	}
+		"enzyme-adapter-react-16": "^1.5.0",
+		"jest-expo": "^30.0.0"
+	},
+	"jest": {
+	"preset": "jest-expo"
+}
 }

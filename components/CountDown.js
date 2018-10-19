@@ -42,11 +42,13 @@ class CountDown extends React.Component {
 	state = {
 		until: Math.max(this.props.until, 0),
 		wentBackgroundAt: null,
+		finished: false
 	};
+
 
 	componentDidMount() {
 		if (this.props.onFinish) {
-			this.onFinish = _.once(this.props.onFinish);
+			this.onFinish = (this.props.onFinish);
 		}
 		this.timer = setInterval(this.updateTimer, 1000);
 		AppState.addEventListener('change', this._handleAppStateChange);
@@ -58,10 +60,17 @@ class CountDown extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (this.props.until !== nextProps.until) {
+		if (this.props.until !== nextProps.until && nextProps.until > 0) {
 			this.setState({
-				until: Math.max(nextProps.until, 0)
+				until: Math.max(nextProps.until, 0),
+				finished: false
 			});
+		}
+		else if(this.props.until !== nextProps.until){
+            this.setState({
+                until: Math.max(nextProps.until, 0),
+				//finished: true
+            });
 		}
 	}
 
@@ -74,7 +83,7 @@ class CountDown extends React.Component {
 		if (currentAppState === 'background') {
 			this.setState({wentBackgroundAt: Date.now()});
 		}
-	}
+	};
 
 	getTimeLeft = () => {
 		const {until} = this.state;
@@ -89,19 +98,24 @@ class CountDown extends React.Component {
 	updateTimer = () => {
 		let timeLeft = this.state.until;
 
-		if (timeLeft <= 1) {
-			clearInterval(this.timer);
-			this.setState({until: 0});
-			if (this.onFinish) {
-				this.onFinish();
-			}
-		} else {
+		if (timeLeft <= 1 && ! this.state.finished) {
+			this.setState({
+				until: 0,
+				finished: true
+			},() =>
+				{if(this.onFinish) {
+                	this.onFinish();
+            	}}
+			);
+
+		} else if (! this.state.finished){
 			if( ! this.props.paused){
 				timeLeft = timeLeft - 1;
 				this.setState({until: timeLeft});
 			}
 		}
 	};
+
 
 	renderDigit = (d) => {
 		const {digitBgColor, digitTxtColor, size} = this.props;

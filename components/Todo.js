@@ -63,7 +63,7 @@ export default class Todo extends Component {
         const nav = this.props.navigation;
         return (
             <View>
-                <CountdownComponent until={2700}/>
+                <CountdownComponent until={5}/>
                 <View style={styles.footer}>
                     <TextInput
                         style={styles.textInput}
