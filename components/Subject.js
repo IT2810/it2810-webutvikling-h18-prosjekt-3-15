@@ -4,21 +4,20 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity,
-    AsyncStorage,
     Button,
 } from 'react-native';
-
-import {StackNavigator} from 'react-navigation';
 
 export default class Subject extends React.Component{
     constructor(props) {
         super(props);
+        //Takes in prop.url and sends it to To-do through the navigation button.
         this.state = {
             url: this.props.url
         }
     }
 
     render() {
+        //the onPress function in Button sends the state and navigates to To-do from Mainpage.
         const nav = this.props.navigation;
         return (
             <View key={this.props.keyval} style={styles.subject}>

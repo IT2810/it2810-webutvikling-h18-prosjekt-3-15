@@ -1,15 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Mainpage from "./components/Mainpage";
-import Todo from "./components/Todo";
-import CountdownComponent from "./components/CountdownComponent.js";
-import Stepcounter from "./components/StepCounter.js"
-import StepCounter from "./components/StepCounter";
-
+import { StyleSheet } from 'react-native';
 import {createStackNavigator} from 'react-navigation';
 import HomeScreen from './Screen/HomeScreen';
-import SubjectScreen from './Screen/SubjectScreen';
-
+import TaskScreen from './Screen/TaskScreen';
+//The different screens in the application. NavigationOptions is the header that is automagically generated.
 const RootStack = createStackNavigator(
     {
         Home: {
@@ -26,7 +20,7 @@ const RootStack = createStackNavigator(
             }
         },
         Subjects: {
-            screen: SubjectScreen,
+            screen: TaskScreen,
             navigationOptions: {
                 title: "Todo-list",
                 headerStyle: {
@@ -40,6 +34,7 @@ const RootStack = createStackNavigator(
         },
     },
     {
+        //Sets the first page to Home.
         initialRouteName: 'Home',
     }
 );
@@ -51,7 +46,7 @@ export default class App extends React.Component {
             navigation: this.props.navigation
         }
     }
-
+    //Calls the screens and sends down the navigation state.
     render() {
         return <RootStack navigation={this.state.navigation}/>;
     }

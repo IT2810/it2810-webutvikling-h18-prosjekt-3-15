@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Button, Text} from 'react-native';
+import {View} from 'react-native';
 import Todo from '../components/Todo';
-class SubjectScreen extends React.Component {
+class TaskScreen extends React.Component {
+    //TaskScreen renders the To-do component, and sends down the navigation prop from App.js.
     render() {
         return (
             <View>
@@ -10,4 +11,4 @@ class SubjectScreen extends React.Component {
         );
     }
 }
-export default SubjectScreen;
+export default TaskScreen;
