@@ -1,14 +1,14 @@
 import React from 'react';
 import Todo from '../components/Todo.js';
 import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 it('renders correctly', () => {
-    const tree = renderer
-    // Quick workaround for navigation. Without this it has trouble finding the state and therefore its params and so on
-        .create(<Todo navigation={{'state':{'params':{'url': '/1/test/'}}}}/>)
-        .toJSON();
+    const renderer = new ShallowRenderer();
+    const tree = renderer.render(<Todo navigation={{'state':{'params':{'url': '/1/test/'}}}}/>);
     expect(tree).toMatchSnapshot();
 });
+
 it('check start state', ()=>{
     const tree = renderer.create(<Todo navigation={{'state':{'params':{'url': '/1/test/'}}}}/>).getInstance();
     let x = tree.state;

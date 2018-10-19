@@ -1,25 +1,20 @@
 import React from 'react';
 import Subject from '../components/Subject';
 import renderer from 'react-test-renderer';
-import Adapter from 'enzyme-adapter-react-16';
+import Button from "../components/Button";
 
 
-it('renders correctly', ()=>{
 
-    const tree = renderer
-        .create(<Subject></Subject>)
-        .toJSON();
-    expect(tree).toMatchSnapshot()
+import ShallowRenderer from 'react-test-renderer/shallow';
+
+it('renders correctly', () => {
+    const mockTitle = "Smil";
+    const renderer = new ShallowRenderer();
+    const tree = renderer.render(<Subject subject={mockTitle}/>);
+    expect(tree).toMatchSnapshot();
 });
 
-configure({adapter : new Adapter()});
-
 test('test Onpress functunality', () =>{
-    const onPressEvent = jest.fn();
-    onPressEvent.mockReturnValue('link on press invoked');
+    const mockFunc = jest.fn();
 
-    const wrapper = shallow(<Subject onPress={ onPressEvent } title={'Test123'}/>)
-    wrapper.find(Text).first().props().onPress();
-
-    expect(onPressEvent.mock.calls.length).toBe(1);
 })

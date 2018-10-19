@@ -537,3 +537,895 @@ exports[`CountDown renders correctly 2`] = `
   </View>
 </View>
 `;
+
+exports[`renders correctly 1`] = `
+<Component>
+  <Component
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Component
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 5,
+                "justifyContent": "center",
+                "marginHorizontal": 2,
+              },
+              Object {
+                "backgroundColor": "#4286f4",
+              },
+              Object {
+                "height": 78,
+                "width": 69,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "fontVariant": Array [
+                    "tabular-nums",
+                  ],
+                  "fontWeight": "bold",
+                },
+                Object {
+                  "fontSize": 30,
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            02
+          </Text>
+        </Component>
+      </Component>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "white",
+              "marginVertical": 2,
+            },
+            Object {
+              "fontSize": 16.666666666666668,
+            },
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        Minutes
+      </Text>
+    </Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Component
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 5,
+                "justifyContent": "center",
+                "marginHorizontal": 2,
+              },
+              Object {
+                "backgroundColor": "#4286f4",
+              },
+              Object {
+                "height": 78,
+                "width": 69,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "fontVariant": Array [
+                    "tabular-nums",
+                  ],
+                  "fontWeight": "bold",
+                },
+                Object {
+                  "fontSize": 30,
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            00
+          </Text>
+        </Component>
+      </Component>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "white",
+              "marginVertical": 2,
+            },
+            Object {
+              "fontSize": 16.666666666666668,
+            },
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        Seconds
+      </Text>
+    </Component>
+  </Component>
+</Component>
+`;
+
+exports[`renders correctly 2`] = `
+<Component>
+  <Component
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Component
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 5,
+                "justifyContent": "center",
+                "marginHorizontal": 2,
+              },
+              Object {
+                "backgroundColor": "#4286f4",
+              },
+              Object {
+                "height": 78,
+                "width": 69,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "fontVariant": Array [
+                    "tabular-nums",
+                  ],
+                  "fontWeight": "bold",
+                },
+                Object {
+                  "fontSize": 30,
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            00
+          </Text>
+        </Component>
+      </Component>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "white",
+              "marginVertical": 2,
+            },
+            Object {
+              "fontSize": 16.666666666666668,
+            },
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        Days
+      </Text>
+    </Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Component
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 5,
+                "justifyContent": "center",
+                "marginHorizontal": 2,
+              },
+              Object {
+                "backgroundColor": "#4286f4",
+              },
+              Object {
+                "height": 78,
+                "width": 69,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "fontVariant": Array [
+                    "tabular-nums",
+                  ],
+                  "fontWeight": "bold",
+                },
+                Object {
+                  "fontSize": 30,
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            00
+          </Text>
+        </Component>
+      </Component>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "white",
+              "marginVertical": 2,
+            },
+            Object {
+              "fontSize": 16.666666666666668,
+            },
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        Hours
+      </Text>
+    </Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Component
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 5,
+                "justifyContent": "center",
+                "marginHorizontal": 2,
+              },
+              Object {
+                "backgroundColor": "#4286f4",
+              },
+              Object {
+                "height": 78,
+                "width": 69,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "fontVariant": Array [
+                    "tabular-nums",
+                  ],
+                  "fontWeight": "bold",
+                },
+                Object {
+                  "fontSize": 30,
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            03
+          </Text>
+        </Component>
+      </Component>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "white",
+              "marginVertical": 2,
+            },
+            Object {
+              "fontSize": 16.666666666666668,
+            },
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        Minutes
+      </Text>
+    </Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Component
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 5,
+                "justifyContent": "center",
+                "marginHorizontal": 2,
+              },
+              Object {
+                "backgroundColor": "#4286f4",
+              },
+              Object {
+                "height": 78,
+                "width": 69,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "fontVariant": Array [
+                    "tabular-nums",
+                  ],
+                  "fontWeight": "bold",
+                },
+                Object {
+                  "fontSize": 30,
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            00
+          </Text>
+        </Component>
+      </Component>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "white",
+              "marginVertical": 2,
+            },
+            Object {
+              "fontSize": 16.666666666666668,
+            },
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        Seconds
+      </Text>
+    </Component>
+  </Component>
+</Component>
+`;
+
+exports[`renders correctly 3`] = `
+<Component>
+  <Component
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Component
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 5,
+                "justifyContent": "center",
+                "marginHorizontal": 2,
+              },
+              Object {
+                "backgroundColor": "#4286f4",
+              },
+              Object {
+                "height": 78,
+                "width": 69,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "fontVariant": Array [
+                    "tabular-nums",
+                  ],
+                  "fontWeight": "bold",
+                },
+                Object {
+                  "fontSize": 30,
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            00
+          </Text>
+        </Component>
+      </Component>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "white",
+              "marginVertical": 2,
+            },
+            Object {
+              "fontSize": 16.666666666666668,
+            },
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        Days
+      </Text>
+    </Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Component
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 5,
+                "justifyContent": "center",
+                "marginHorizontal": 2,
+              },
+              Object {
+                "backgroundColor": "#4286f4",
+              },
+              Object {
+                "height": 78,
+                "width": 69,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "fontVariant": Array [
+                    "tabular-nums",
+                  ],
+                  "fontWeight": "bold",
+                },
+                Object {
+                  "fontSize": 30,
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            00
+          </Text>
+        </Component>
+      </Component>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "white",
+              "marginVertical": 2,
+            },
+            Object {
+              "fontSize": 16.666666666666668,
+            },
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        Hours
+      </Text>
+    </Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Component
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 5,
+                "justifyContent": "center",
+                "marginHorizontal": 2,
+              },
+              Object {
+                "backgroundColor": "#4286f4",
+              },
+              Object {
+                "height": 78,
+                "width": 69,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "fontVariant": Array [
+                    "tabular-nums",
+                  ],
+                  "fontWeight": "bold",
+                },
+                Object {
+                  "fontSize": 30,
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            01
+          </Text>
+        </Component>
+      </Component>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "white",
+              "marginVertical": 2,
+            },
+            Object {
+              "fontSize": 16.666666666666668,
+            },
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        Minutes
+      </Text>
+    </Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Component
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 5,
+                "justifyContent": "center",
+                "marginHorizontal": 2,
+              },
+              Object {
+                "backgroundColor": "#4286f4",
+              },
+              Object {
+                "height": 78,
+                "width": 69,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "fontVariant": Array [
+                    "tabular-nums",
+                  ],
+                  "fontWeight": "bold",
+                },
+                Object {
+                  "fontSize": 30,
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            00
+          </Text>
+        </Component>
+      </Component>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "white",
+              "marginVertical": 2,
+            },
+            Object {
+              "fontSize": 16.666666666666668,
+            },
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        Seconds
+      </Text>
+    </Component>
+  </Component>
+</Component>
+`;

@@ -1,290 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<View>
-  <View>
-    <View
-      style={
-        Object {
-          "marginTop": 7,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "flexDirection": "row",
-            "justifyContent": "center",
-          }
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "justifyContent": "center",
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "justifyContent": "center",
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "borderRadius": 5,
-                    "justifyContent": "center",
-                    "marginHorizontal": 2,
-                  },
-                  Object {
-                    "backgroundColor": "#4286f4",
-                  },
-                  Object {
-                    "height": 78,
-                    "width": 69,
-                  },
-                ]
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "white",
-                      "fontVariant": Array [
-                        "tabular-nums",
-                      ],
-                      "fontWeight": "bold",
-                    },
-                    Object {
-                      "fontSize": 30,
-                    },
-                    Object {
-                      "color": "#000",
-                    },
-                  ]
-                }
-              >
-                00
-              </Text>
-            </View>
-          </View>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "white",
-                  "marginVertical": 2,
-                },
-                Object {
-                  "fontSize": 16.666666666666668,
-                },
-                Object {
-                  "color": "#000",
-                },
-              ]
-            }
-          >
-            Minutes
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "justifyContent": "center",
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "justifyContent": "center",
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "borderRadius": 5,
-                    "justifyContent": "center",
-                    "marginHorizontal": 2,
-                  },
-                  Object {
-                    "backgroundColor": "#4286f4",
-                  },
-                  Object {
-                    "height": 78,
-                    "width": 69,
-                  },
-                ]
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "white",
-                      "fontVariant": Array [
-                        "tabular-nums",
-                      ],
-                      "fontWeight": "bold",
-                    },
-                    Object {
-                      "fontSize": 30,
-                    },
-                    Object {
-                      "color": "#000",
-                    },
-                  ]
-                }
-              >
-                05
-              </Text>
-            </View>
-          </View>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "white",
-                  "marginVertical": 2,
-                },
-                Object {
-                  "fontSize": 16.666666666666668,
-                },
-                Object {
-                  "color": "#000",
-                },
-              ]
-            }
-          >
-            Seconds
-          </Text>
-        </View>
-      </View>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "marginLeft": 15,
-            "marginRight": 15,
-          },
-          undefined,
-          undefined,
-          undefined,
-        ]
-      }
-    >
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={null}
-      >
-        <View
-          pointerEvents="box-only"
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#9E9E9E",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "padding": 19,
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              Object {
-                "padding": 12,
-              },
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-            ]
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Array [
-                Object {},
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                Array [
-                  Object {
-                    "color": "white",
-                    "fontSize": 20,
-                  },
-                  undefined,
-                  Object {
-                    "fontSize": 17.5,
-                  },
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                ],
-              ]
-            }
-          >
-            Play/Pause
-          </Text>
-        </View>
-      </View>
-    </View>
-  </View>
-  <View
+<Component>
+  <App
+    until={5}
+  />
+  <Component
     style={
       Object {
         "left": 0,
@@ -312,7 +33,7 @@ exports[`renders correctly 1`] = `
       underlineColorAndroid="transparent"
       value=""
     />
-  </View>
+  </Component>
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -332,15 +53,9 @@ exports[`renders correctly 1`] = `
       }
     }
   />
-  <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
     style={
       Object {
         "alignItems": "center",
@@ -349,7 +64,6 @@ exports[`renders correctly 1`] = `
         "elevation": 8,
         "height": 60,
         "justifyContent": "center",
-        "opacity": 1,
         "position": "absolute",
         "right": 5,
         "top": 165,
@@ -371,14 +85,16 @@ exports[`renders correctly 1`] = `
     >
       +
     </Text>
-  </View>
-  <View
+  </TouchableOpacity>
+  <Component
     style={
       Object {
         "height": 400,
         "marginTop": 70,
       }
     }
-  />
-</View>
+  >
+    <ScrollViewMock />
+  </Component>
+</Component>
 `;

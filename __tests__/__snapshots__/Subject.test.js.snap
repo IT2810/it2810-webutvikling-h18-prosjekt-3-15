@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Component
+  style={
+    Object {
+      "borderBottomColor": "#ededed",
+      "borderBottomWidth": 2,
+      "padding": 40,
+      "paddingRight": 20,
+      "position": "relative",
+    }
+  }
+>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    style={
+      Object {
+        "alignSelf": "center",
+        "backgroundColor": "#DDDDDD",
+        "bottom": 5,
+        "justifyContent": "center",
+        "left": 20,
+        "padding": 25,
+        "paddingRight": 140,
+        "position": "absolute",
+        "top": 5,
+      }
+    }
+  >
+    <Button
+      onPress={[Function]}
+      title="Smil"
+    >
+      Hello
+    </Button>
+  </TouchableOpacity>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#f44141",
+        "bottom": 5,
+        "justifyContent": "center",
+        "padding": 25,
+        "position": "absolute",
+        "right": 10,
+        "top": 5,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+    >
+      Delete
+    </Text>
+  </TouchableOpacity>
+</Component>
+`;

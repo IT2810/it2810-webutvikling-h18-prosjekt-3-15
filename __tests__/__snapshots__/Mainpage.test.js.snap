@@ -1,32 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#b0b4ba",
-        "justifyContent": "center",
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "white",
-          "fontSize": 18,
-          "padding": 26,
-        }
-      }
-    >
-      Steps taken today: 
-      0
-    </Text>
-  </View>
+<Component>
+  <StepCounter
+    style={Object {}}
+  />
   <TextInput
     allowFontScaling={true}
     onChangeText={[Function]}
@@ -63,15 +41,9 @@ exports[`renders correctly 1`] = `
       }
     }
   />
-  <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
     style={
       Object {
         "alignItems": "center",
@@ -80,7 +52,6 @@ exports[`renders correctly 1`] = `
         "elevation": 8,
         "height": 60,
         "justifyContent": "center",
-        "opacity": 1,
         "position": "absolute",
         "right": 5,
         "top": 80,
@@ -102,13 +73,15 @@ exports[`renders correctly 1`] = `
     >
       +
     </Text>
-  </View>
-  <View
+  </TouchableOpacity>
+  <Component
     style={
       Object {
         "height": 460,
       }
     }
-  />
-</View>
+  >
+    <ScrollViewMock />
+  </Component>
+</Component>
 `;

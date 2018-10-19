@@ -1,14 +1,14 @@
 import React from 'react';
 import CountdownComponent from '../components/CountdownComponent';
 import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
-
-it('renders correctly', ()=>{
-    const tree = renderer
-        .create(<CountdownComponent/>)
-        .toJSON();
-    expect(tree).toMatchSnapshot()
+it('renders correctly', () => {
+    const renderer = new ShallowRenderer();
+    const tree = renderer.render(<CountdownComponent/>);
+    expect(tree).toMatchSnapshot();
 });
+
 
 it('Pause timer ', ()=>{
     const tree = renderer.create(<CountdownComponent/>).getInstance();
@@ -24,5 +24,4 @@ it('Reset timer', ()=>{
     tree.state.timerPaused = false;
     tree.resetTimer();
     expect(Object.is(tree.state.timerFinished, y)) && expect(Object.is(tree.state.timerPaused, x));
-
-})
+});

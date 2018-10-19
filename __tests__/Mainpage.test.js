@@ -1,18 +1,16 @@
 import React from 'react';
 import Mainpage from '../components/Mainpage';
 import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
-
-it('renders correctly', ()=>{
-    const tree = renderer
-        .create(<Mainpage/>)
-        .toJSON();
-    expect(tree).toMatchSnapshot()
+it('renders correctly', () => {
+    const renderer = new ShallowRenderer();
+    const tree = renderer.render(<Mainpage/>);
+    expect(tree).toMatchSnapshot();
 });
 
 it('get MaxKey', ()=> {
     let MainPage = renderer.create(<Mainpage/>).getInstance();
-    console.log(MainPage)
     expect(MainPage.getMaxKey(
         {1:{name: "Nils"},
             2:{name: "Marte"},
@@ -25,11 +23,13 @@ it('get initialState', ()=> {
     var x = MainPage.state;
     expect(Object.is(x, { subjectText: '', subjects: {}, keyCount: 0 }));
 });
-
-it('addSubject', ()=> {
-    let Mainpage = renderer.create(<Mainpage/>).getInstance();
-    Mainpage.state.subjectText = "TestTekst";
-    let x = Mainpage.addSubject()
-    console.log(x);
-    expect(true);
-})
+it('Delete subject', ()=> {
+    const tree = renderer.create(<Mainpage/>).getInstance();
+    tree.state.subjects = {
+        1: {'name': "Julaften",},
+        2: {'name': "Hello",}
+    };
+    tree.deleteSubject(2);
+    let x = tree.state.subjects;
+    expect(Object.is(x, {1: {'name': "Julaften"}}));
+});
