@@ -66,7 +66,7 @@ class Mainpage extends React.Component {
                 </TouchableOpacity>
                 <View style={styles.scrollViewContainer}>
                     <ScrollView contentContainerStyle={styles.scrollContainer}>
-                        //Maps all objects in the state, and sends down states.
+                        {/*Maps all objects in the state, and sends down states.*/}
                             {(Object.keys(subDict)).map((key)=> {
                                 return (<Subject
                                     key={key}
