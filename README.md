@@ -50,7 +50,7 @@ Denne metoden er nyttig om trenger skritt-tellingen mellom to spesifikke tidspun
 Ønsker du derimot å kunne telle samtidig som Pedometeret oppdaterer seg, kan du registrere en callback. Da må du bruke følgende funksjon: 
 
 ```
- Pedometer-watchStepCount(callback)
+ Pedometer.watchStepCount(callback)
 ```
 Merk at om du trenger å bruke .steps på resultatet for å få ut antall steg, eksempelvis 
 ```
@@ -130,8 +130,6 @@ For å få inn en timer fant vi en timer som var svært lik det vi trengte, men 
 Vår løsning var heller å hente ut koden fra index.js til vår egen komponent, og deretter kode videre for å tilpasse den vårt behov. Dette er tillatt ettersom komponenten er licence-free. Den nye komponenten heter CountDown.js i vårt prosjekt.
 
  ## Teknologi
-
- ### React Native
 
  ### Plattformuavhengighet
 Plattformuavhengighet var en utfordring. Ingen av gruppemedlemmene hadde iOS på telefon. Vi undersøkte dermed å få til bruken av simulator. Dette viste seg og være en utfordring da ingen av oss hadde en mac, og simulatorer stort sett kun var tilgjengelig via xcode. 
