@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#b0b4ba",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 18,
+          "padding": 26,
+        }
+      }
+    >
+      Steps taken today: 
+      0
+    </Text>
+  </View>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    placeholder="Add subjects here"
+    placeholderTextColor="white"
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#252525",
+        "color": "#fff",
+        "marginRight": 80,
+        "padding": 20,
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#252525",
+        "elevation": 8,
+        "height": 68,
+        "justifyContent": "center",
+        "position": "absolute",
+        "right": 0,
+        "top": 76,
+        "width": 80,
+        "zIndex": 10,
+      }
+    }
+  />
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#2fc47c",
+        "borderRadius": 35,
+        "elevation": 8,
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "position": "absolute",
+        "right": 5,
+        "top": 80,
+        "width": 60,
+        "zIndex": 11,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#fff",
+          "fontSize": 24,
+        }
+      }
+    >
+      +
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 460,
+      }
+    }
+  />
+</View>
+`;
