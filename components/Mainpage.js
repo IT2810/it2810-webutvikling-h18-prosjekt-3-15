@@ -1,10 +1,6 @@
 import React from 'react';
 import {View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, AsyncStorage } from 'react-native';
 import Subject from './Subject';
-import {createStackNavigator} from 'react-navigation';
-import {Header} from 'react-native-elements';
-
-import Todo from './Todo';
 import StepCounter from "./StepCounter";
 
 class Mainpage extends React.Component {
@@ -18,7 +14,7 @@ class Mainpage extends React.Component {
         this.deleteSubject = this.deleteSubject.bind(this);
         this.addSubject = this.addSubject.bind(this);
     }
-
+    //Sets the state from AsyncStorage when entering the application after closing it.
     async getSubjectDict(){
         try{
             let value = await AsyncStorage.getItem('subjects');
@@ -35,15 +31,15 @@ class Mainpage extends React.Component {
                 console.log("Error retrieving data: " +  error)
             }
         }
+        //Saves the state.
     async saveSubjects(value){
         try{
             await AsyncStorage.setItem('subjects', JSON.stringify(this.state.subjects));
-            //console.log("save value : " + JSON.stringify(this.state.subjects));
         }catch(error){
             console.log("Error saving data " + error);
         }
     }
-
+    //When the Application starts, run this function.
     componentDidMount(){
         this.getSubjectDict()
     }
@@ -64,13 +60,13 @@ class Mainpage extends React.Component {
                     placeholderTextColor='white'
                     underlineColorAndroid='transparent'>
                 </TextInput>
-
                 <Text style={styles.backgroundInput}/>
                 <TouchableOpacity onPress={()=> this.addSubject()} style={styles.addButton}>
                     <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
                 <View style={styles.scrollViewContainer}>
                     <ScrollView contentContainerStyle={styles.scrollContainer}>
+                        //Maps all objects in the state, and sends down states.
                             {(Object.keys(subDict)).map((key)=> {
                                 return (<Subject
                                     key={key}
@@ -85,7 +81,7 @@ class Mainpage extends React.Component {
 
         );
     }
-
+    //Creates a unique url key that gets sent to To-do and is used as the key in order to access a unique list for every subject
     addSubject() {
         if (this.state.subjectText) {
             let keyInt = this.state.keyCount + 1;
@@ -116,7 +112,7 @@ class Mainpage extends React.Component {
 
 
     }
-
+    //returns the largest key in subjects, and is used to set KeyCount so that the keycount continues even after AsyncStorage.
     getMaxKey(obj){
 		return Object.keys(obj).reduce((a, b) => obj[a] > obj[b] ? a : b);
 	}
