@@ -3,6 +3,14 @@ import { Pedometer } from "expo";
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+/*
+* The StepCounter-component simple renders <Text> Steps taken today: {steps_taken_today}</Text> without any styling.
+* This is because then the style can be set the the parenting component, to better fit in any UI.
+*
+* When mounting is sets a date for todays date, but 00:00 o'clock. Then it polls how many steps have been taken between then
+* and right now whenever the Pedometer updates.
+* */
+
 export default class StepCounter extends Component{
 
 	constructor(props){
@@ -13,15 +21,6 @@ export default class StepCounter extends Component{
 		}
 	}
 
-
-	/*resetSteps(){
-		this.setState({
-			startDate: new Date()
-		});
-	}*/
-
-
-
 	componentDidMount() {
 		this.refreshStepCount();
 		this._subscribe();
@@ -30,7 +29,7 @@ export default class StepCounter extends Component{
 	refreshStepCount(){
         //this.resetSteps();
         let today = new Date();
-        today.setHours(0, 0, 0, 1);
+        today.setHours(0, 0, 0, 0);
         let rightNow = new Date();
         Pedometer.getStepCountAsync(today, rightNow ).then(
             result => {

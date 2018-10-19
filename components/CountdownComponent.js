@@ -3,7 +3,9 @@ import {View, StyleSheet} from 'react-native';
 import Countdown from "./CountDown";
 import {Button} from "react-native-elements";
 
-//creting and exporting
+/*
+* A simple container-class for Countdown which adds a button to play/pause, and simple logic to reset the timer if needed.
+* */
 export default class CountdownComponent extends React.Component {
 
     //set the props and state in constructor

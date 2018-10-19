@@ -8,6 +8,13 @@
 * and it was the most complete version we could find.
 *
 * Original source code can be found at: https://github.com/talalmajali/react-native-countdown-component
+*
+*
+* The Component works by calling setInterval(this.updateTimer(), 1000) when mounted, and updateTimer has logic to
+* see if the timer is paused or finished.
+*
+* Upon unmounting it will use clearInterval. Before that, logic in onTimer() is used to avoid problems where setInterval will
+* both restart the objects subscription and add one more.
 * */
 import React from 'react';
 import PropTypes from 'prop-types';
