@@ -1,8 +1,4 @@
 # IT2810 Project 3 - Group 15 
- ## Krav til dokumentasjon
- - Dokumentasjonen skal diskutere, forklare og vise til alle de viktigste valgene og løsningene som gruppa gjør (inklusive valg av komponenter og api).
-- Gruppas valg av teknologi som utforskes (jmfr krav til innhold) skal dokumenteres i tutorials form slik at andre lett kan lære av eksempelet dere lager (dvs. gi en liten introduksjon til hva og hvordan).
-
  ## Innhold og funksjonalitet
 
  ### Vår App
