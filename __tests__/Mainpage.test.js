@@ -28,5 +28,8 @@ it('get initialState', ()=> {
 
 it('addSubject', ()=> {
     let Mainpage = renderer.create(<Mainpage/>).getInstance();
+    Mainpage.state.subjectText = "TestTekst";
     let x = Mainpage.addSubject()
+    console.log(x);
+    expect(true);
 })
