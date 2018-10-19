@@ -1,0 +1,384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View>
+  <View>
+    <View
+      style={
+        Object {
+          "marginTop": 7,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "borderRadius": 5,
+                    "justifyContent": "center",
+                    "marginHorizontal": 2,
+                  },
+                  Object {
+                    "backgroundColor": "#4286f4",
+                  },
+                  Object {
+                    "height": 78,
+                    "width": 69,
+                  },
+                ]
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "white",
+                      "fontVariant": Array [
+                        "tabular-nums",
+                      ],
+                      "fontWeight": "bold",
+                    },
+                    Object {
+                      "fontSize": 30,
+                    },
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+              >
+                00
+              </Text>
+            </View>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "white",
+                  "marginVertical": 2,
+                },
+                Object {
+                  "fontSize": 16.666666666666668,
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            Minutes
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "borderRadius": 5,
+                    "justifyContent": "center",
+                    "marginHorizontal": 2,
+                  },
+                  Object {
+                    "backgroundColor": "#4286f4",
+                  },
+                  Object {
+                    "height": 78,
+                    "width": 69,
+                  },
+                ]
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "white",
+                      "fontVariant": Array [
+                        "tabular-nums",
+                      ],
+                      "fontWeight": "bold",
+                    },
+                    Object {
+                      "fontSize": 30,
+                    },
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+              >
+                05
+              </Text>
+            </View>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "white",
+                  "marginVertical": 2,
+                },
+                Object {
+                  "fontSize": 16.666666666666668,
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            Seconds
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "marginLeft": 15,
+            "marginRight": 15,
+          },
+          undefined,
+          undefined,
+          undefined,
+        ]
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={null}
+      >
+        <View
+          pointerEvents="box-only"
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#9E9E9E",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "padding": 19,
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Object {
+                "padding": 12,
+              },
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {},
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontSize": 20,
+                  },
+                  undefined,
+                  Object {
+                    "fontSize": 17.5,
+                  },
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
+              ]
+            }
+          >
+            Play/Pause
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 162,
+        "zIndex": 10,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="> Type your task here and press the +"
+      placeholderTextColor="white"
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#252525",
+          "color": "#fff",
+          "marginRight": 70,
+          "padding": 20,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#252525",
+        "elevation": 8,
+        "height": 68,
+        "justifyContent": "center",
+        "position": "absolute",
+        "right": 0,
+        "top": 162,
+        "width": 80,
+        "zIndex": 10,
+      }
+    }
+  />
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#2fc47c",
+        "borderRadius": 35,
+        "elevation": 8,
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "position": "absolute",
+        "right": 5,
+        "top": 165,
+        "width": 60,
+        "zIndex": 11,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#fff",
+          "fontSize": 24,
+        }
+      }
+    >
+      +
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 400,
+        "marginTop": 70,
+      }
+    }
+  />
+</View>
+`;
