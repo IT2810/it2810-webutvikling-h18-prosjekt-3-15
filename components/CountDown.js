@@ -8,6 +8,13 @@
 * and it was the most complete version we could find.
 *
 * Original source code can be found at: https://github.com/talalmajali/react-native-countdown-component
+*
+*
+* The Component works by calling setInterval(this.updateTimer(), 1000) when mounted, and updateTimer has logic to
+* see if the timer is paused or finished.
+*
+* Upon unmounting it will use clearInterval. Before that, logic in onTimer() is used to avoid problems where setInterval will
+* both restart the objects subscription and add one more.
 * */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -22,30 +29,41 @@ import {
 import _ from 'lodash';
 import {sprintf} from 'sprintf-js';
 
+//setting some constants for later use
 const DEFAULT_BG_COLOR = '#4286f4';
 const DEFAULT_TIME_TXT_COLOR = '#000';
 const DEFAULT_DIGIT_TXT_COLOR = '#000';
 const DEFAULT_TIME_TO_SHOW = ['D', 'H', 'M', 'S'];
 
+//creating the Countdown component
 class CountDown extends React.Component {
+	//defining the props and their prop types
 	static propTypes = {
+		//color of Countdown
 		digitBgColor: PropTypes.string,
+		//color of digit text
 		digitTxtColor: PropTypes.string,
+		//color of text
 		timeTxtColor: PropTypes.string,
 		timeToShow: PropTypes.array,
+		//size of the component (countdown)
 		size: PropTypes.number,
+		//time left
 		until: PropTypes.number,
 		onFinish: PropTypes.func,
 		onPress: PropTypes.func,
 	};
 
+	//setting the state
 	state = {
+		//time left
 		until: Math.max(this.props.until, 0),
 		wentBackgroundAt: null,
+		//defining if the timer is finished or not
 		finished: false
 	};
 
-
+	//on mount set timer interval, add eventListener and check if there is an onFinish
 	componentDidMount() {
 		if (this.props.onFinish) {
 			this.onFinish = (this.props.onFinish);
@@ -54,6 +72,7 @@ class CountDown extends React.Component {
 		AppState.addEventListener('change', this._handleAppStateChange);
 	}
 
+	//on unmount, clear the interval and remove the eventListener
 	componentWillUnmount() {
 		clearInterval(this.timer);
 		AppState.removeEventListener('change', this._handleAppStateChange);
@@ -69,7 +88,6 @@ class CountDown extends React.Component {
 		else if(this.props.until !== nextProps.until){
             this.setState({
                 until: Math.max(nextProps.until, 0),
-				//finished: true
             });
 		}
 	}
@@ -85,6 +103,7 @@ class CountDown extends React.Component {
 		}
 	};
 
+	//function for getting and returning the remaining time
 	getTimeLeft = () => {
 		const {until} = this.state;
 		return {
@@ -95,6 +114,7 @@ class CountDown extends React.Component {
 		};
 	};
 
+	//function for updating the timer
 	updateTimer = () => {
 		let timeLeft = this.state.until;
 
@@ -117,6 +137,7 @@ class CountDown extends React.Component {
 	};
 
 
+	//defining how to render a digit
 	renderDigit = (d) => {
 		const {digitBgColor, digitTxtColor, size} = this.props;
 		return (
@@ -136,6 +157,7 @@ class CountDown extends React.Component {
 		);
 	};
 
+	//defining how to render when there are double digits
 	renderDoubleDigits = (label, digits) => {
 		const {timeTxtColor, size} = this.props;
 
@@ -156,6 +178,7 @@ class CountDown extends React.Component {
 		);
 	};
 
+	//defining the render of the entire countdown component and returning it
 	renderCountDown = () => {
 		const {timeToShow} = this.props;
 		const {until} = this.state;
@@ -176,6 +199,7 @@ class CountDown extends React.Component {
 		);
 	};
 
+	//rendering the component
 	render() {
 		return (
 			<View style={this.props.style}>
@@ -185,6 +209,7 @@ class CountDown extends React.Component {
 	}
 }
 
+//setting some default props
 CountDown.defaultProps = {
 	digitBgColor: DEFAULT_BG_COLOR,
 	digitTxtColor: DEFAULT_DIGIT_TXT_COLOR,
@@ -199,6 +224,7 @@ CountDown.defaultProps = {
 	paused: false,
 };
 
+//styling for all elements
 const styles = StyleSheet.create({
 	timeCont: {
 		flexDirection: 'row',
@@ -231,4 +257,5 @@ const styles = StyleSheet.create({
 	},
 });
 
+//exporting the component
 module.exports = CountDown;

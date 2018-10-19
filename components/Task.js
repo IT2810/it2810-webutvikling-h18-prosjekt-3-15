@@ -4,80 +4,36 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity,
-    AsyncStorage,
 } from 'react-native';
 import { CheckBox } from 'react-native-elements';
 
-// alle disse kommentarene er hvordan jeg tror det kan løses ish, men vet ikke hvor jeg skal starte
-// eller hvordan jeg skal implementere det (:
 
-//const checkedSave = { 'checked' : 'false'};
-
-//const checkToBeSaved = { 'checked' : this.state.checked};
-
-//const existingCheck = await AsyncStorage.getItem('checkedbox');
-
-//let newChecked = JSON.parse(existingCheck);
-//if( !newChecked ){
-//    newChecked = []
-//}
-
-//newChecked.push( checkToBeSaved )
-
-//await AsyncStorage.setItem('checkedbox', JSON.stringify(newChecked) )
-//    .then( () => { console.log ('Successfully saved')} )
-//    .catch( () => { console.log('There was an error saving the CheckedState.')})
-
+//creating and exporting the Task component
 export default class Task extends Component {
+    //setting the props
     constructor(props){
         super(props);
     }
 
-    // disse saver bare strings ?? hvordan booleans da ? lagre hvem som er checked.
-    // parse til JSON også tilbake ? how.
-    /*
-    async getChecked(){
-        try{
-            let value = await AsyncStorage.getItem('checkedbox', value);
-            console.log('value : ' + value);
-            let parseValue = JSON.parse(value);
-            console.log('parsedValue : ' + parseValue);
-            this.setState({checked: parseValue})
-
-        } catch (error){
-            console.log("Error retrieving data " + error);
-        }
-    }
-
-    async saveChecked(value){
-        try{
-            await AsyncStorage.setItem('checkedbox', JSON.stringify(this.state.checked));
-            console.log("save value : " + value);
-        }catch(error){
-            console.log("Error saving data " + error);
-        }
-    } */
-
+    //function that callbacks when the checkbox is clicked (logic in to-do)
     checkboxClicked(){
-        /*this.setState({checked: !this.state.checked});
-        this.saveChecked(this.state.checked);
-        console.log(this.state.checked); */
         this.props.callback(this.props.taskKey);
     }
-/*
-    componentDidMount() {
-        this.getChecked()
-    } */
 
+    //rendering the component
     render() {
         return (
             <View key={this.props.keyval} style={styles.task}>
+                {/*Displaying the date on the task*/}
                 <Text style={styles.taskText}>{this.props.date}</Text>
+                {/*Displaying the task text on the task*/}
                 <Text style={styles.taskText}>{this.props.task}</Text>
                 <View style={styles.checkbox}>
-                <CheckBox style={styles.checkbox} checked={this.props.checked}
+                    {/*Checkbox to mark if task is done or not*/}
+                    <CheckBox style={styles.checkbox} checked={this.props.checked}
                           onPress={() => this.checkboxClicked()} />
                 </View>
+                {/*Button to delete task, logic in to-do*/}
                 <TouchableOpacity onPress={this.props.deleteMethod} style={styles.taskDelete}>
                     <Text style={styles.taskDeleteText}>Delete</Text>
                 </TouchableOpacity>
@@ -86,6 +42,7 @@ export default class Task extends Component {
     }
 }
 
+//styling for all elemts in the component
 const styles = StyleSheet.create({
     task: {
         position: 'relative',
