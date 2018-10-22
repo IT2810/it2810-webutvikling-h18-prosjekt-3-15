@@ -145,7 +145,6 @@ Vi prøvde å lage en applikasjon som i teorien skulle fungere godt på både IO
 
  **Prosjekt og issues**
  Gjennom hele arbeidsperioden jobbet gruppen med et 'Prosjekt' på github. Her la vi inn alle issues og holdt oversikt over statusen på prosjektet/issues. Når en issue ble opprettet ble den lagt i *To Do*, når en person startet på et issue ble dette flyttet til *In Progress* og til slutt til *Done* når issuen var ferdigstilt. På denne måten var githuben alltid oppdatert på hvem som jobbet med hva og hvor langt de hadde kommet. 
- ![adde bilde av Prosjekt?](https://prnt.sc/l3jixg)
 
  **Branches og commits**
  Gruppen brukte en standard for navngiving av branches. Disse skulle vise til om branchen omhandlet en feature [feat], bug, hotfix eller liknende. Deretter skulle issuen det omhandlet refereres. Til slutt skrev du et beskrivende navn på branchen.
